@@ -42,7 +42,6 @@ namespace ProyectoVarela
                     lbl_nombre.Text = reader["NOMBRE"].ToString();
                     lbl_tipoh.Text = reader["TIPOHERRAMIENTAS"].ToString();
                     lbl_existencia.Text = reader["EXISTENCIAH"].ToString();
-                   
                 }
                 else
                 {
@@ -58,7 +57,6 @@ namespace ProyectoVarela
                 if (string.IsNullOrEmpty(txt_nombre.Text)
                     && string.IsNullOrEmpty(txt_tipo.Text)
                     && string.IsNullOrEmpty(txt_existencia.Text))
-
                 {
                     MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -90,6 +88,7 @@ namespace ProyectoVarela
                     cmd.Parameters.AddWithValue("@tipo", txt_tipo.Text);
                     cmd.Parameters.AddWithValue("@existencia", txt_existencia.Text);
                     int filasActualizadas = cmd.ExecuteNonQuery();
+
                     if (filasActualizadas > 0)
                     {
                         MessageBox.Show("SE ACTUALIZÓ CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

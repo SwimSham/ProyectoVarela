@@ -20,7 +20,7 @@ namespace ProyectoVarela
 
         private void btn_mostrar_Click(object sender, EventArgs e)
         {
-            {
+            
                 if (string.IsNullOrEmpty(txt_idmaterial.Text))
                 {
                     MessageBox.Show("INTRODUCE ID.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -47,7 +47,7 @@ namespace ProyectoVarela
                         MessageBox.Show("NO EXISTE.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
+            
         }
 
         private void V_Load(object sender, EventArgs e)
@@ -57,7 +57,6 @@ namespace ProyectoVarela
 
         private void btm_modificar_Click(object sender, EventArgs e)
         {
-
             {
                 if (string.IsNullOrEmpty(txt_material.Text)
                     && string.IsNullOrEmpty(txt_tipo.Text)

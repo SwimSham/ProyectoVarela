@@ -1,7 +1,6 @@
 ﻿using ProyectoVarela.Utilerias;
 using System;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace ProyectoVarela
@@ -40,11 +39,10 @@ namespace ProyectoVarela
                     MessageBox.Show("NO EXISTE.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-    }
+        }
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-
             {
                 if (string.IsNullOrEmpty(txt_nombre.Text)
                     && string.IsNullOrEmpty(txt_direccion.Text)
@@ -79,49 +77,47 @@ namespace ProyectoVarela
                 {
                     txt_puesto.Text = txtPuesto.Text;
                     return;
-                   }
-
-                    using (SqlConnection cn = new SqlConnection(SqlHelper.GetConnectionString()))
-                    {
-                        cn.Open();
-                        string query = "UPDATE EMPLEADOS SET NOMBRE = @nombre,DIRECCION = @direccion,CORREO = @correo,CELULAR=@celular,PUESTO=@puesto WHERE IDEMPLEADO = @id";
-                        SqlCommand cmd = new SqlCommand(query, cn);
-                        cmd.Parameters.AddWithValue("@id", txt_idempleado.Text);
-                        cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
-                        cmd.Parameters.AddWithValue("@direccion", txt_direccion.Text);
-                        cmd.Parameters.AddWithValue("@correo", txt_correo.Text);
-                        cmd.Parameters.AddWithValue("@celular", txt_celular.Text);
-                        cmd.Parameters.AddWithValue("@puesto", txt_puesto.Text);
-                        int filasActualizadas = cmd.ExecuteNonQuery();
-                        if (filasActualizadas > 0)
-                        {
-                            MessageBox.Show("SE ACTUALIZÓ CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Hide();
-                            ConsultarEmpleados modificar = new ConsultarEmpleados();  
-                            modificar.Show();
-
-                            txtNombre.Text = string.Empty;
-                            txtDireccion.Text = string.Empty;
-                            txtCorreo.Text = string.Empty;
-                            txtCelular.Text = string.Empty;
-                            txtPuesto.Text = string.Empty;
-                            txt_idempleado.Text = string.Empty;
-                            txt_nombre.Text = string.Empty;
-                            txt_direccion.Text = string.Empty;
-                            txt_correo.Text = string.Empty;
-                            txt_celular.Text = string.Empty;
-                            txt_puesto.Text = string.Empty;
-                        }
-                        else
-                        {
-                            MessageBox.Show("NO EXISTE CLIENTE.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
                 }
 
-            }
-        
+                using (SqlConnection cn = new SqlConnection(SqlHelper.GetConnectionString()))
+                {
+                    cn.Open();
+                    string query = "UPDATE EMPLEADOS SET NOMBRE = @nombre,DIRECCION = @direccion,CORREO = @correo,CELULAR=@celular,PUESTO=@puesto WHERE IDEMPLEADO = @id";
+                    SqlCommand cmd = new SqlCommand(query, cn);
+                    cmd.Parameters.AddWithValue("@id", txt_idempleado.Text);
+                    cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
+                    cmd.Parameters.AddWithValue("@direccion", txt_direccion.Text);
+                    cmd.Parameters.AddWithValue("@correo", txt_correo.Text);
+                    cmd.Parameters.AddWithValue("@celular", txt_celular.Text);
+                    cmd.Parameters.AddWithValue("@puesto", txt_puesto.Text);
+                    int filasActualizadas = cmd.ExecuteNonQuery();
+                    if (filasActualizadas > 0)
+                    {
+                        MessageBox.Show("SE ACTUALIZÓ CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Hide();
+                        ConsultarEmpleados modificar = new ConsultarEmpleados();  
+                        modificar.Show();
 
+                        txtNombre.Text = string.Empty;
+                        txtDireccion.Text = string.Empty;
+                        txtCorreo.Text = string.Empty;
+                        txtCelular.Text = string.Empty;
+                        txtPuesto.Text = string.Empty;
+                        txt_idempleado.Text = string.Empty;
+                        txt_nombre.Text = string.Empty;
+                        txt_direccion.Text = string.Empty;
+                        txt_correo.Text = string.Empty;
+                        txt_celular.Text = string.Empty;
+                        txt_puesto.Text = string.Empty;
+                    }
+                    else
+                    {
+                        MessageBox.Show("NO EXISTE CLIENTE.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+        
         private void btn_salir_Click(object sender, EventArgs e)
         {
             this.Close();

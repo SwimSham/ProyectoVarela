@@ -13,7 +13,6 @@ namespace ProyectoVarela
             InitializeComponent();
         }
 
-
         private void RegistrarMateriales()
         {
             using (SqlConnection conexion = new SqlConnection(SqlHelper.GetConnectionString()))

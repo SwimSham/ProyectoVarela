@@ -1,13 +1,7 @@
 ﻿using ProyectoVarela.Utilerias;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoVarela
@@ -46,8 +40,6 @@ namespace ProyectoVarela
 
                     if (numControlCount > 0 && contraseñaCount > 0)
                     {
-
-
                         this.Hide();
                         Form1 menu = new Form1();   
                         menu.ShowDialog();
