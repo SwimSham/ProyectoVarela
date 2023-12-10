@@ -38,28 +38,22 @@
             this.btn_mostrar = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
             this.btm_modificar = new System.Windows.Forms.Button();
-            this.lbl_tipoh = new System.Windows.Forms.Label();
-            this.lbl_nombre = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.lbl_existencia = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_existencia = new System.Windows.Forms.TextBox();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.txtExistencia = new System.Windows.Forms.TextBox();
+            this.txtHerramienta = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(67, 135);
+            this.label3.Location = new System.Drawing.Point(46, 132);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(133, 25);
             this.label3.TabIndex = 27;
@@ -67,7 +61,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(67, 98);
+            this.label2.Location = new System.Drawing.Point(46, 95);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 25);
             this.label2.TabIndex = 26;
@@ -151,22 +145,6 @@
             this.btm_modificar.UseVisualStyleBackColor = false;
             this.btm_modificar.Click += new System.EventHandler(this.btm_modificar_Click);
             // 
-            // lbl_tipoh
-            // 
-            this.lbl_tipoh.AutoSize = true;
-            this.lbl_tipoh.Location = new System.Drawing.Point(165, 164);
-            this.lbl_tipoh.Name = "lbl_tipoh";
-            this.lbl_tipoh.Size = new System.Drawing.Size(0, 16);
-            this.lbl_tipoh.TabIndex = 31;
-            // 
-            // lbl_nombre
-            // 
-            this.lbl_nombre.AutoSize = true;
-            this.lbl_nombre.Location = new System.Drawing.Point(165, 126);
-            this.lbl_nombre.Name = "lbl_nombre";
-            this.lbl_nombre.Size = new System.Drawing.Size(0, 16);
-            this.lbl_nombre.TabIndex = 30;
-            // 
             // label4
             // 
             this.label4.Location = new System.Drawing.Point(333, 135);
@@ -185,20 +163,12 @@
             // 
             // label6
             // 
-            this.label6.Location = new System.Drawing.Point(67, 172);
+            this.label6.Location = new System.Drawing.Point(46, 169);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 25);
             this.label6.TabIndex = 36;
             this.label6.Text = "Existencia";
             this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
-            // lbl_existencia
-            // 
-            this.lbl_existencia.AutoSize = true;
-            this.lbl_existencia.Location = new System.Drawing.Point(165, 199);
-            this.lbl_existencia.Name = "lbl_existencia";
-            this.lbl_existencia.Size = new System.Drawing.Size(0, 16);
-            this.lbl_existencia.TabIndex = 37;
             // 
             // label7
             // 
@@ -234,11 +204,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.txtExistencia);
+            this.panel2.Controls.Add(this.txtHerramienta);
+            this.panel2.Controls.Add(this.txtNombre);
             this.panel2.Controls.Add(this.btn_salir);
-            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.btm_modificar);
-            this.panel2.Controls.Add(this.pictureBox4);
             this.panel2.Controls.Add(this.txt_existencia);
             this.panel2.Controls.Add(this.btn_eliminar);
             this.panel2.Controls.Add(this.label7);
@@ -253,44 +223,41 @@
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(33, 31);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(600, 308);
             this.panel2.TabIndex = 59;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // pictureBox2
+            // txtExistencia
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(187, 98);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 70;
-            this.pictureBox2.TabStop = false;
+            this.txtExistencia.BackColor = System.Drawing.Color.LightGreen;
+            this.txtExistencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtExistencia.Location = new System.Drawing.Point(173, 170);
+            this.txtExistencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtExistencia.Name = "txtExistencia";
+            this.txtExistencia.Size = new System.Drawing.Size(93, 22);
+            this.txtExistencia.TabIndex = 56;
             // 
-            // pictureBox1
+            // txtHerramienta
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(187, 172);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 69;
-            this.pictureBox1.TabStop = false;
+            this.txtHerramienta.BackColor = System.Drawing.Color.LightGreen;
+            this.txtHerramienta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHerramienta.Location = new System.Drawing.Point(173, 133);
+            this.txtHerramienta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtHerramienta.Name = "txtHerramienta";
+            this.txtHerramienta.Size = new System.Drawing.Size(93, 22);
+            this.txtHerramienta.TabIndex = 55;
             // 
-            // pictureBox4
+            // txtNombre
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(187, 135);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(133, 25);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 68;
-            this.pictureBox4.TabStop = false;
+            this.txtNombre.BackColor = System.Drawing.Color.LightGreen;
+            this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombre.Location = new System.Drawing.Point(173, 96);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(93, 22);
+            this.txtNombre.TabIndex = 54;
             // 
             // ModificarHerramientas
             // 
@@ -298,26 +265,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(667, 369);
-            this.Controls.Add(this.lbl_existencia);
-            this.Controls.Add(this.lbl_tipoh);
-            this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(685, 416);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(685, 416);
             this.Name = "ModificarHerramientas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Modificar Herramienta | VARELA";
             this.Load += new System.EventHandler(this.ModificarHerramientas_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -332,18 +294,15 @@
         private System.Windows.Forms.Button btn_mostrar;
         private System.Windows.Forms.Button btn_salir;
         private System.Windows.Forms.Button btm_modificar;
-        private System.Windows.Forms.Label lbl_tipoh;
-        private System.Windows.Forms.Label lbl_nombre;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lbl_existencia;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_existencia;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TextBox txtExistencia;
+        private System.Windows.Forms.TextBox txtHerramienta;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }
