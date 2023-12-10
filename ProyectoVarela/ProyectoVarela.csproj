@@ -102,7 +102,6 @@
     <Compile Include="IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jose.cs" />
     <Compile Include="ModificarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
