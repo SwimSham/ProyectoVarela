@@ -188,7 +188,6 @@
     <Compile Include="RegistroProvedor.Designer.cs">
       <DependentUpon>RegistroProvedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="TestGit.cs" />
     <Compile Include="Utilerias\SqlHelper.cs" />
     <EmbeddedResource Include="ConsultarEmpleados.resx">
       <DependentUpon>ConsultarEmpleados.cs</DependentUpon>
