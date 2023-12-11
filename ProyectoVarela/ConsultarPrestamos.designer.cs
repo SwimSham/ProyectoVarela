@@ -32,22 +32,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultarPrestamos));
             this.regresar_Btn = new System.Windows.Forms.Button();
             this.dataGridViewPrestamos = new System.Windows.Forms.DataGridView();
+            this.nombreHerramientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.txtIdEmpleado = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nombreHerramientaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prestamoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrestamos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // regresar_Btn
@@ -86,6 +87,15 @@
             this.dataGridViewPrestamos.Size = new System.Drawing.Size(710, 259);
             this.dataGridViewPrestamos.TabIndex = 116;
             // 
+            // nombreHerramientaDataGridViewTextBoxColumn
+            // 
+            this.nombreHerramientaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombreHerramientaDataGridViewTextBoxColumn.DataPropertyName = "NombreHerramienta";
+            this.nombreHerramientaDataGridViewTextBoxColumn.HeaderText = "Herramienta";
+            this.nombreHerramientaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreHerramientaDataGridViewTextBoxColumn.Name = "nombreHerramientaDataGridViewTextBoxColumn";
+            this.nombreHerramientaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // NombreEmpleado
             // 
             this.NombreEmpleado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -115,6 +125,20 @@
             this.FechaEntrega.ReadOnly = true;
             this.FechaEntrega.Width = 135;
             // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cantidadDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // prestamoBindingSource
+            // 
+            this.prestamoBindingSource.DataSource = typeof(ProyectoVarela.Entidades.Prestamo);
+            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.DarkSeaGreen;
@@ -139,6 +163,16 @@
             this.groupBox2.Size = new System.Drawing.Size(749, 113);
             this.groupBox2.TabIndex = 127;
             this.groupBox2.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(277, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 21);
+            this.label2.TabIndex = 122;
+            this.label2.Text = "Consultar Prestamo";
             // 
             // btnConsultar
             // 
@@ -172,38 +206,19 @@
             this.label5.TabIndex = 119;
             this.label5.Text = "Id del Empleado:";
             // 
-            // label2
+            // btnImprimir
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(277, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 21);
-            this.label2.TabIndex = 122;
-            this.label2.Text = "Consultar Prestamo";
-            // 
-            // nombreHerramientaDataGridViewTextBoxColumn
-            // 
-            this.nombreHerramientaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombreHerramientaDataGridViewTextBoxColumn.DataPropertyName = "NombreHerramienta";
-            this.nombreHerramientaDataGridViewTextBoxColumn.HeaderText = "Herramienta";
-            this.nombreHerramientaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nombreHerramientaDataGridViewTextBoxColumn.Name = "nombreHerramientaDataGridViewTextBoxColumn";
-            this.nombreHerramientaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cantidadDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // prestamoBindingSource
-            // 
-            this.prestamoBindingSource.DataSource = typeof(ProyectoVarela.Entidades.Prestamo);
+            this.btnImprimir.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Mongolian Baiti", 10.2F);
+            this.btnImprimir.Location = new System.Drawing.Point(590, 472);
+            this.btnImprimir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(177, 35);
+            this.btnImprimir.TabIndex = 128;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // ConsultarPrestamos
             // 
@@ -211,6 +226,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProyectoVarela.Properties.Resources.background_sec;
             this.ClientSize = new System.Drawing.Size(830, 531);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.regresar_Btn);
             this.Controls.Add(this.groupBox1);
@@ -222,10 +238,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Consultar Registro";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPrestamos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prestamoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -245,5 +261,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaEntrega;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

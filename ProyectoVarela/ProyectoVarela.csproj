@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13.3\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -188,12 +197,6 @@
     <Compile Include="RegistroProvedor.Designer.cs">
       <DependentUpon>RegistroProvedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportePrestamos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportePrestamos.Designer.cs">
-      <DependentUpon>ReportePrestamos.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilerias\SqlHelper.cs" />
     <EmbeddedResource Include="ConsultarEmpleados.resx">
       <DependentUpon>ConsultarEmpleados.cs</DependentUpon>
@@ -272,6 +275,7 @@
     <EmbeddedResource Include="RegistroProvedor.resx">
       <DependentUpon>RegistroProvedor.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
