@@ -95,8 +95,7 @@ namespace ProyectoVarela
                     {
                         MessageBox.Show("SE ACTUALIZÓ CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        ConsultarEmpleados modificar = new ConsultarEmpleados();  
-                        modificar.Show();
+                 
 
                         txtNombre.Text = string.Empty;
                         txtDireccion.Text = string.Empty;
@@ -147,8 +146,7 @@ namespace ProyectoVarela
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("EMPLEADO ELIMINADO CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        ConsultarEmpleados modificar = new ConsultarEmpleados();
-                        modificar.Show();
+                    
                         txtNombre.Text = string.Empty;
                         txtDireccion.Text = string.Empty;
                         txtCorreo.Text = string.Empty;

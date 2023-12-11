@@ -30,10 +30,10 @@ namespace ProyectoVarela
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        lbl_nombre.Text = reader["NOMBRE"].ToString();
-                        lbl_celular.Text = reader["CELULAR"].ToString();
-                        lbl_direccion.Text = reader["DIRECCION"].ToString();
-                        lbl_empresa.Text = reader["EMPRESA"].ToString();
+                        txtDireccion.Text = reader["NOMBRE"].ToString();
+                        textBox1.Text = reader["CELULAR"].ToString();
+                        textBox2.Text = reader["DIRECCION"].ToString();
+                        textBox3.Text = reader["EMPRESA"].ToString();
 
                     }
                     else
@@ -59,22 +59,22 @@ namespace ProyectoVarela
                     }
                     if (string.IsNullOrEmpty(txt_nombre.Text))
                     {
-                        txt_nombre.Text = lbl_nombre.Text;
+                        txt_nombre.Text = txtDireccion.Text;
                         return;
                     }
                     if (string.IsNullOrEmpty(txt_celular.Text))
                     {
-                        txt_celular.Text = lbl_celular.Text;
+                        txt_celular.Text = textBox1.Text;
                         return;
                     }
                     if (string.IsNullOrEmpty(txt_direccion.Text))
                     {
-                        txt_direccion.Text = lbl_direccion.Text;
+                        txt_direccion.Text = textBox2.Text;
                         return;
                     }
                     if (string.IsNullOrEmpty(txt_empresa.Text))
                     {
-                        txt_empresa.Text = lbl_empresa.Text;
+                        txt_empresa.Text = textBox3.Text;
                         return;
                     }
                     
@@ -94,8 +94,7 @@ namespace ProyectoVarela
                         {
                             MessageBox.Show("SE ACTUALIZÓ CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Hide();
-                            ConsultarProvedor modificar = new ConsultarProvedor();
-                            modificar.Show();
+                            
 
                             lbl_nombre.Text = string.Empty;
                             lbl_direccion.Text = string.Empty;
@@ -128,21 +127,20 @@ namespace ProyectoVarela
                 using (SqlConnection cn = new SqlConnection(SqlHelper.GetConnectionString()))
                 {
                     cn.Open();
-                    string verificarEmpleadoQuery = "SELECT COUNT(*) FROM PROVEDORES WHERE IDPROVEDOR = @id";
+                    string verificarEmpleadoQuery = "SELECT COUNT(*) FROM PROVEDORES WHERE IDPROVEDORES = @id";
                     SqlCommand verificarEmpleadoCmd = new SqlCommand(verificarEmpleadoQuery, cn);
                     verificarEmpleadoCmd.Parameters.AddWithValue("@id", txt_idprovedor.Text);
                     int EmpleadoExistente = (int)verificarEmpleadoCmd.ExecuteScalar();
 
                     if (EmpleadoExistente > 0)
                     {
-                        string query = "DELETE FROM PROVEDORES WHERE IDPROVEDOR = @id";
+                        string query = "DELETE FROM PROVEDORES WHERE IDPROVEDORES = @id";
                         SqlCommand cmd = new SqlCommand(query, cn);
                         cmd.Parameters.AddWithValue("@id", txt_idprovedor.Text);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("PROVEEDOR ELIMINADO CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        ConsultarProvedor modificar = new ConsultarProvedor();
-                        modificar.Show();
+                       
                         lbl_nombre.Text = string.Empty;
                         lbl_direccion.Text = string.Empty;
                         lbl_empresa.Text = string.Empty;
