@@ -59,6 +59,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnEliminarM = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,10 +71,10 @@
             this.columnHeader1,
             this.columnHeader2});
             this.listViewHerramientas.HideSelection = false;
-            this.listViewHerramientas.Location = new System.Drawing.Point(257, 233);
-            this.listViewHerramientas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewHerramientas.Location = new System.Drawing.Point(343, 287);
+            this.listViewHerramientas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewHerramientas.Name = "listViewHerramientas";
-            this.listViewHerramientas.Size = new System.Drawing.Size(232, 166);
+            this.listViewHerramientas.Size = new System.Drawing.Size(308, 203);
             this.listViewHerramientas.TabIndex = 63;
             this.listViewHerramientas.UseCompatibleStateImageBehavior = false;
             this.listViewHerramientas.View = System.Windows.Forms.View.Details;
@@ -90,10 +92,9 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(85, 110);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(113, 151);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.Size = new System.Drawing.Size(95, 16);
             this.label3.TabIndex = 62;
             this.label3.Text = "MATERIALES:";
             // 
@@ -101,10 +102,10 @@
             // 
             this.btnAnadirMateriales.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAnadirMateriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnadirMateriales.Location = new System.Drawing.Point(162, 194);
-            this.btnAnadirMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnadirMateriales.Location = new System.Drawing.Point(214, 252);
+            this.btnAnadirMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnadirMateriales.Name = "btnAnadirMateriales";
-            this.btnAnadirMateriales.Size = new System.Drawing.Size(65, 25);
+            this.btnAnadirMateriales.Size = new System.Drawing.Size(87, 31);
             this.btnAnadirMateriales.TabIndex = 61;
             this.btnAnadirMateriales.Text = "Añadir";
             this.btnAnadirMateriales.UseVisualStyleBackColor = false;
@@ -114,19 +115,18 @@
             // 
             this.txtCantidadM.BackColor = System.Drawing.Color.LightGreen;
             this.txtCantidadM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCantidadM.Location = new System.Drawing.Point(100, 170);
-            this.txtCantidadM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadM.Location = new System.Drawing.Point(133, 226);
+            this.txtCantidadM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidadM.Name = "txtCantidadM";
-            this.txtCantidadM.Size = new System.Drawing.Size(130, 20);
+            this.txtCantidadM.Size = new System.Drawing.Size(173, 22);
             this.txtCantidadM.TabIndex = 60;
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(32, 173);
-            this.lblCantidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCantidad.Location = new System.Drawing.Point(40, 226);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(65, 13);
+            this.lblCantidad.Size = new System.Drawing.Size(79, 16);
             this.lblCantidad.TabIndex = 59;
             this.lblCantidad.Text = "CANTIDAD:";
             // 
@@ -135,19 +135,18 @@
             this.cbMateriales.BackColor = System.Drawing.Color.LightGreen;
             this.cbMateriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbMateriales.FormattingEnabled = true;
-            this.cbMateriales.Location = new System.Drawing.Point(100, 139);
-            this.cbMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbMateriales.Location = new System.Drawing.Point(133, 187);
+            this.cbMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMateriales.Name = "cbMateriales";
-            this.cbMateriales.Size = new System.Drawing.Size(130, 21);
+            this.cbMateriales.Size = new System.Drawing.Size(172, 24);
             this.cbMateriales.TabIndex = 58;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 142);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(26, 190);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(78, 13);
+            this.label5.Size = new System.Drawing.Size(93, 16);
             this.label5.TabIndex = 57;
             this.label5.Text = "ID MATERIAL:";
             // 
@@ -155,19 +154,18 @@
             // 
             this.txtCantidadH.BackColor = System.Drawing.Color.LightGreen;
             this.txtCantidadH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCantidadH.Location = new System.Drawing.Point(359, 170);
-            this.txtCantidadH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadH.Location = new System.Drawing.Point(479, 209);
+            this.txtCantidadH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidadH.Name = "txtCantidadH";
-            this.txtCantidadH.Size = new System.Drawing.Size(130, 20);
+            this.txtCantidadH.Size = new System.Drawing.Size(173, 22);
             this.txtCantidadH.TabIndex = 56;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(290, 173);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(387, 213);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 13);
+            this.label7.Size = new System.Drawing.Size(79, 16);
             this.label7.TabIndex = 55;
             this.label7.Text = "CANTIDAD:";
             // 
@@ -178,10 +176,10 @@
             this.Id_Material,
             this.CantidadM});
             this.listViewMateriales.HideSelection = false;
-            this.listViewMateriales.Location = new System.Drawing.Point(22, 233);
-            this.listViewMateriales.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listViewMateriales.Location = new System.Drawing.Point(29, 287);
+            this.listViewMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listViewMateriales.Name = "listViewMateriales";
-            this.listViewMateriales.Size = new System.Drawing.Size(205, 166);
+            this.listViewMateriales.Size = new System.Drawing.Size(272, 203);
             this.listViewMateriales.TabIndex = 54;
             this.listViewMateriales.UseCompatibleStateImageBehavior = false;
             this.listViewMateriales.View = System.Windows.Forms.View.Details;
@@ -201,19 +199,18 @@
             this.cbHerramientas.BackColor = System.Drawing.Color.LightGreen;
             this.cbHerramientas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbHerramientas.FormattingEnabled = true;
-            this.cbHerramientas.Location = new System.Drawing.Point(359, 139);
-            this.cbHerramientas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbHerramientas.Location = new System.Drawing.Point(476, 172);
+            this.cbHerramientas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbHerramientas.Name = "cbHerramientas";
-            this.cbHerramientas.Size = new System.Drawing.Size(130, 21);
+            this.cbHerramientas.Size = new System.Drawing.Size(172, 24);
             this.cbHerramientas.TabIndex = 53;
             // 
             // lblNombreProyecto
             // 
             this.lblNombreProyecto.AutoSize = true;
-            this.lblNombreProyecto.Location = new System.Drawing.Point(30, 77);
-            this.lblNombreProyecto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreProyecto.Location = new System.Drawing.Point(40, 95);
             this.lblNombreProyecto.Name = "lblNombreProyecto";
-            this.lblNombreProyecto.Size = new System.Drawing.Size(119, 13);
+            this.lblNombreProyecto.Size = new System.Drawing.Size(147, 16);
             this.lblNombreProyecto.TabIndex = 52;
             this.lblNombreProyecto.Text = "NOMBRE PROYECTO:";
             // 
@@ -221,20 +218,20 @@
             // 
             this.txtNombreProyecto.BackColor = System.Drawing.Color.LightGreen;
             this.txtNombreProyecto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreProyecto.Location = new System.Drawing.Point(156, 75);
-            this.txtNombreProyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreProyecto.Location = new System.Drawing.Point(208, 92);
+            this.txtNombreProyecto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreProyecto.Name = "txtNombreProyecto";
-            this.txtNombreProyecto.Size = new System.Drawing.Size(165, 20);
+            this.txtNombreProyecto.Size = new System.Drawing.Size(219, 22);
             this.txtNombreProyecto.TabIndex = 51;
             // 
             // btnAnadirHerramienta
             // 
             this.btnAnadirHerramienta.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAnadirHerramienta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnadirHerramienta.Location = new System.Drawing.Point(421, 194);
-            this.btnAnadirHerramienta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAnadirHerramienta.Location = new System.Drawing.Point(561, 239);
+            this.btnAnadirHerramienta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnadirHerramienta.Name = "btnAnadirHerramienta";
-            this.btnAnadirHerramienta.Size = new System.Drawing.Size(65, 25);
+            this.btnAnadirHerramienta.Size = new System.Drawing.Size(87, 31);
             this.btnAnadirHerramienta.TabIndex = 50;
             this.btnAnadirHerramienta.Text = "Añadir";
             this.btnAnadirHerramienta.UseVisualStyleBackColor = false;
@@ -244,10 +241,10 @@
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Location = new System.Drawing.Point(421, 414);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(561, 510);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(65, 25);
+            this.btnGuardar.Size = new System.Drawing.Size(87, 31);
             this.btnGuardar.TabIndex = 49;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -257,10 +254,10 @@
             // 
             this.btnSalir.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(344, 414);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Location = new System.Drawing.Point(459, 510);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(65, 25);
+            this.btnSalir.Size = new System.Drawing.Size(87, 31);
             this.btnSalir.TabIndex = 48;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -269,30 +266,27 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(251, 142);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(335, 175);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(106, 13);
+            this.label6.Size = new System.Drawing.Size(129, 16);
             this.label6.TabIndex = 47;
             this.label6.Text = "ID_HERRAMIENTA:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(325, 110);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(433, 135);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 13);
+            this.label4.Size = new System.Drawing.Size(118, 16);
             this.label4.TabIndex = 46;
             this.label4.Text = "HERRAMIENTAS:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 50);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(59, 62);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 13);
+            this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 45;
             this.label2.Text = "NOMBRE CLIENTE:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -301,20 +295,20 @@
             // 
             this.txtNombreCliente.BackColor = System.Drawing.Color.LightGreen;
             this.txtNombreCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreCliente.Location = new System.Drawing.Point(156, 47);
-            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreCliente.Location = new System.Drawing.Point(208, 58);
+            this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(165, 20);
+            this.txtNombreCliente.Size = new System.Drawing.Size(219, 22);
             this.txtNombreCliente.TabIndex = 44;
             // 
             // btnEliminarH
             // 
             this.btnEliminarH.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnEliminarH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarH.Location = new System.Drawing.Point(344, 194);
-            this.btnEliminarH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarH.Location = new System.Drawing.Point(459, 239);
+            this.btnEliminarH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarH.Name = "btnEliminarH";
-            this.btnEliminarH.Size = new System.Drawing.Size(65, 25);
+            this.btnEliminarH.Size = new System.Drawing.Size(87, 31);
             this.btnEliminarH.TabIndex = 65;
             this.btnEliminarH.Text = "Eliminar";
             this.btnEliminarH.UseVisualStyleBackColor = false;
@@ -323,10 +317,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 20);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(40, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 13);
+            this.label1.Size = new System.Drawing.Size(101, 16);
             this.label1.TabIndex = 67;
             this.label1.Text = "ID PROYECTO:";
             // 
@@ -334,20 +327,20 @@
             // 
             this.txtId_Proyecto.BackColor = System.Drawing.Color.LightGreen;
             this.txtId_Proyecto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtId_Proyecto.Location = new System.Drawing.Point(117, 17);
-            this.txtId_Proyecto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId_Proyecto.Location = new System.Drawing.Point(156, 21);
+            this.txtId_Proyecto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId_Proyecto.Name = "txtId_Proyecto";
-            this.txtId_Proyecto.Size = new System.Drawing.Size(165, 20);
+            this.txtId_Proyecto.Size = new System.Drawing.Size(219, 22);
             this.txtId_Proyecto.TabIndex = 66;
             // 
             // btnBuscar
             // 
             this.btnBuscar.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Location = new System.Drawing.Point(286, 15);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(381, 18);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(65, 25);
+            this.btnBuscar.Size = new System.Drawing.Size(87, 31);
             this.btnBuscar.TabIndex = 68;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -357,10 +350,10 @@
             // 
             this.btnEliminarM.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnEliminarM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarM.Location = new System.Drawing.Point(84, 194);
-            this.btnEliminarM.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarM.Location = new System.Drawing.Point(116, 252);
+            this.btnEliminarM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarM.Name = "btnEliminarM";
-            this.btnEliminarM.Size = new System.Drawing.Size(65, 25);
+            this.btnEliminarM.Size = new System.Drawing.Size(87, 31);
             this.btnEliminarM.TabIndex = 70;
             this.btnEliminarM.Text = "Eliminar";
             this.btnEliminarM.UseVisualStyleBackColor = false;
@@ -369,6 +362,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.txtNombreProyecto);
             this.panel1.Controls.Add(this.txtId_Proyecto);
             this.panel1.Controls.Add(this.btnEliminarM);
@@ -395,21 +390,41 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 450);
+            this.panel1.Size = new System.Drawing.Size(667, 554);
             this.panel1.TabIndex = 71;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightGreen;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(208, 118);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(219, 22);
+            this.textBox1.TabIndex = 71;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(40, 118);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(125, 16);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "FECHA REGISTRO";
+            // 
             // ModificarProyecto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(500, 450);
+            this.ClientSize = new System.Drawing.Size(667, 554);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ModificarProyecto";
             this.Text = "Modificar Proyecto | VARELA";
             this.Load += new System.EventHandler(this.ModificarProyecto_Load);
@@ -451,5 +466,7 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnEliminarM;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

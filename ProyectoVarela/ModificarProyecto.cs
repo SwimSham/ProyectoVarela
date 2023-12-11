@@ -21,7 +21,7 @@ namespace ProyectoVarela
 
         private void DatosMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog=laminadoVarela; Integrated Security = True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security = True"))
             {
                 try
                 {
@@ -61,7 +61,7 @@ namespace ProyectoVarela
 
         private void DatosHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog = laminadoVarela; Integrated Security = True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog = laminadoVarela; Integrated Security = True"))
             {
                 try
                 {
@@ -100,13 +100,13 @@ namespace ProyectoVarela
 
         private void DatosProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog=laminadoVarela; Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security=True"))
             {
                 try
                 {
                     conexion.Open();
 
-                    string consulta = "SELECT Nombre_Proyecto, NomCliente FROM PROYECTO WHERE Id_Proyecto=@Id_Proyecto;";
+                    string consulta = "SELECT Nombre_Proyecto, NomCliente,Fecha_Registro FROM PROYECTO WHERE Id_Proyecto=@Id_Proyecto;";
 
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
                     {
@@ -118,32 +118,41 @@ namespace ProyectoVarela
                             {
                                 string nombreProyecto = reader["Nombre_Proyecto"].ToString();
                                 string nomCliente = reader["NomCliente"].ToString();
+                                DateTime fecha = Convert.ToDateTime(reader["Fecha_Registro"]);
 
                                 txtNombreProyecto.Text = nombreProyecto;
                                 txtNombreCliente.Text = nomCliente;
+                                textBox1.Text = fecha.ToString("yyyy-MM-dd");
                             }
                         }
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-
+                    MessageBox.Show($"Error al obtener datos del proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            DatosProyecto();
-            DatosMateriales();
-            DatosHerramientas();
-            CargarComboBoxMateriales();
-            CargarComboBoxHerramientas();
+            if (string.IsNullOrEmpty(txtId_Proyecto.Text))
+            {
+                MessageBox.Show("INTRODUCE ID.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else {
+                DatosProyecto();
+                DatosMateriales();
+                DatosHerramientas();
+                CargarComboBoxMateriales();
+                CargarComboBoxHerramientas();
+                    }
         }
 
         public void CargarComboBoxMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
@@ -167,7 +176,7 @@ namespace ProyectoVarela
 
         public void CargarComboBoxHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
@@ -260,7 +269,7 @@ namespace ProyectoVarela
 
         private void EliminarDatosObsoletos()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                     conexion.Open();
 
@@ -287,7 +296,7 @@ namespace ProyectoVarela
 
         private void RegistrarMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -324,7 +333,7 @@ namespace ProyectoVarela
 
         private void RegistrarHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -360,7 +369,7 @@ namespace ProyectoVarela
 
         private void RegistrarProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -424,8 +433,7 @@ namespace ProyectoVarela
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Proyecto proy = new Proyecto();
-            proy.ShowDialog();
+        
         }
 
         private void label2_Click(object sender, EventArgs e)

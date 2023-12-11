@@ -64,8 +64,17 @@ namespace ProyectoVarela
 
         private void txtBuscarProyecto_Click(object sender, EventArgs e)
         {
-            DatosMateriales();
-            DatosHerramientas();
+            if (string.IsNullOrEmpty(txtId_Proyecto.Text))
+            {
+                MessageBox.Show("INTRODUCE ID.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                // Llamada a funciones o métodos después de validar que txtId_Proyecto no está vacío
+                DatosMateriales();
+                DatosHerramientas();
+            }
         }
 
         private void dataGridViewMateriales_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
