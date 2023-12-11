@@ -240,6 +240,7 @@ namespace ProyectoVarela
             this.fechaprestamo_Datepicker.Name = "fechaprestamo_Datepicker";
             this.fechaprestamo_Datepicker.Size = new System.Drawing.Size(259, 25);
             this.fechaprestamo_Datepicker.TabIndex = 119;
+            this.fechaprestamo_Datepicker.ValueChanged += new System.EventHandler(this.fechaprestamo_Datepicker_ValueChanged);
             // 
             // fechaPublicacion_Lbl
             // 

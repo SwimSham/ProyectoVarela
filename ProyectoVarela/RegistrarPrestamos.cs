@@ -154,5 +154,10 @@ namespace ProyectoVarela
 
             this.Close();
         }
+
+        private void fechaprestamo_Datepicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -102,14 +102,19 @@ namespace ProyectoVarela
                 {
                     conexion.Open();
 
-                        string consulta = "INSERT INTO PROYECTO (Id_Proyecto, NomCliente, Nombre_Proyecto) " +
-                                    "VALUES(@IdProyecto, @NombCliente, @Nombre_Proyecto);";
+                        string consulta = "INSERT INTO PROYECTO (Id_Proyecto, NomCliente, Nombre_Proyecto,Fecha_Registro) " +
+                                    "VALUES(@IdProyecto, @NombCliente, @Nombre_Proyecto,@fecharegistro);";
 
                         using (SqlCommand comando = new SqlCommand(consulta, conexion))
                         {
                             comando.Parameters.AddWithValue("@IdProyecto", txtId_Proyecto.Text);
                             comando.Parameters.AddWithValue("@NombCliente", txtNombreCliente.Text);
                             comando.Parameters.AddWithValue("@Nombre_Proyecto", txtNombreProyecto.Text);
+                        DateTime fecharegistro = fechaprestamo_Datepicker.Value;
+                        string fechaRegistroFormateada = fecharegistro.ToString("yyyy-MM-dd");
+                        comando.Parameters.AddWithValue("@fecharegistro", fechaRegistroFormateada);
+
+
 
                             comando.ExecuteNonQuery();
                         }

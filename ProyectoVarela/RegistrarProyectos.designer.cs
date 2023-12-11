@@ -56,10 +56,12 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.fechaprestamo_Datepicker = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +69,7 @@
             // 
             this.txtId_Proyecto.BackColor = System.Drawing.Color.LightGreen;
             this.txtId_Proyecto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtId_Proyecto.Location = new System.Drawing.Point(211, 33);
+            this.txtId_Proyecto.Location = new System.Drawing.Point(212, 7);
             this.txtId_Proyecto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtId_Proyecto.Name = "txtId_Proyecto";
             this.txtId_Proyecto.Size = new System.Drawing.Size(218, 22);
@@ -77,7 +79,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label1.Location = new System.Drawing.Point(37, 34);
+            this.label1.Location = new System.Drawing.Point(38, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 16);
             this.label1.TabIndex = 1;
@@ -87,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label2.Location = new System.Drawing.Point(37, 64);
+            this.label2.Location = new System.Drawing.Point(38, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 16);
             this.label2.TabIndex = 3;
@@ -97,7 +99,7 @@
             // 
             this.txtNombreCliente.BackColor = System.Drawing.Color.LightGreen;
             this.txtNombreCliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreCliente.Location = new System.Drawing.Point(211, 62);
+            this.txtNombreCliente.Location = new System.Drawing.Point(212, 39);
             this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.Size = new System.Drawing.Size(218, 22);
@@ -166,7 +168,7 @@
             // 
             this.lblNombreProyecto.AutoSize = true;
             this.lblNombreProyecto.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.lblNombreProyecto.Location = new System.Drawing.Point(37, 92);
+            this.lblNombreProyecto.Location = new System.Drawing.Point(38, 72);
             this.lblNombreProyecto.Name = "lblNombreProyecto";
             this.lblNombreProyecto.Size = new System.Drawing.Size(144, 16);
             this.lblNombreProyecto.TabIndex = 25;
@@ -176,7 +178,7 @@
             // 
             this.txtNombreProyecto.BackColor = System.Drawing.Color.LightGreen;
             this.txtNombreProyecto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreProyecto.Location = new System.Drawing.Point(211, 89);
+            this.txtNombreProyecto.Location = new System.Drawing.Point(212, 72);
             this.txtNombreProyecto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreProyecto.Name = "txtNombreProyecto";
             this.txtNombreProyecto.Size = new System.Drawing.Size(218, 22);
@@ -333,13 +335,21 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.fechaprestamo_Datepicker);
             this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtNombreProyecto);
+            this.panel1.Controls.Add(this.lblNombreProyecto);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.cbHerramientas);
+            this.panel1.Controls.Add(this.txtNombreCliente);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.txtCantidadH);
             this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.txtId_Proyecto);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cbMateriales);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
@@ -356,26 +366,15 @@
             this.panel1.TabIndex = 60;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label8
+            // textBox2
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label8.Location = new System.Drawing.Point(39, 209);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 16);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "NOMBRE";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGreen;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(142, 207);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(173, 22);
-            this.textBox1.TabIndex = 43;
+            this.textBox2.BackColor = System.Drawing.Color.LightGreen;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(492, 207);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(173, 22);
+            this.textBox2.TabIndex = 45;
             // 
             // label9
             // 
@@ -387,15 +386,45 @@
             this.label9.TabIndex = 44;
             this.label9.Text = "NOMBRE";
             // 
-            // textBox2
+            // textBox1
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LightGreen;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(492, 207);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 22);
-            this.textBox2.TabIndex = 45;
+            this.textBox1.BackColor = System.Drawing.Color.LightGreen;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(142, 207);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(173, 22);
+            this.textBox1.TabIndex = 43;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.label8.Location = new System.Drawing.Point(39, 209);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 16);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "NOMBRE";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // fechaprestamo_Datepicker
+            // 
+            this.fechaprestamo_Datepicker.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaprestamo_Datepicker.Location = new System.Drawing.Point(208, 100);
+            this.fechaprestamo_Datepicker.Margin = new System.Windows.Forms.Padding(4);
+            this.fechaprestamo_Datepicker.Name = "fechaprestamo_Datepicker";
+            this.fechaprestamo_Datepicker.Size = new System.Drawing.Size(259, 25);
+            this.fechaprestamo_Datepicker.TabIndex = 120;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.label10.Location = new System.Drawing.Point(38, 100);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 16);
+            this.label10.TabIndex = 121;
+            this.label10.Text = "FECHA REGISTRO";
             // 
             // RegistrarProyectos
             // 
@@ -405,14 +434,8 @@
             this.ClientSize = new System.Drawing.Size(708, 487);
             this.Controls.Add(this.listViewHerramientas);
             this.Controls.Add(this.listViewMateriales);
-            this.Controls.Add(this.lblNombreProyecto);
-            this.Controls.Add(this.txtNombreProyecto);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtNombreCliente);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtId_Proyecto);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -426,7 +449,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -463,5 +485,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DateTimePicker fechaprestamo_Datepicker;
     }
 }
