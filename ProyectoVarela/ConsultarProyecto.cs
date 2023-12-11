@@ -24,7 +24,7 @@ namespace ProyectoVarela
             {
                 conexion.Open();
 
-                string consulta = "SELECT Nombre_Proyecto, NomCliente,Fecha_Registro, MP.Id_Material, MP.Cantidad_Necesaria, M.MATERIAL, M.TIPO, " +
+                string consulta = "SELECT Nombre_Proyecto, NomCliente,FechaInicio,FechaTerminacion, MP.Id_Material, MP.Cantidad_Necesaria, M.MATERIAL, M.TIPO, " +
                     "M.MEDIDA, M.CALIBRE, M.EXISTENCIA FROM PROYECTO P INNER JOIN MATERIALES_PROYECTOS MP ON P.Id_Proyecto = MP.Id_Proyecto " +
                     "INNER JOIN MATERIAL M ON MP.Id_Material = M.IDMATERIAL WHERE P.Id_Proyecto = @Id_Proyecto;";
 
@@ -153,8 +153,8 @@ namespace ProyectoVarela
 
         private void button2_Click(object sender, EventArgs e)
         {
-            RegistrarProyectos proy = new RegistrarProyectos();
-            proy.ShowDialog(this);
+            RegistrarProyectos proyectos = new RegistrarProyectos();
+            proyectos.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

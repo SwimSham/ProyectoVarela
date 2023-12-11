@@ -21,13 +21,13 @@ namespace ProyectoVarela
 
         private void DatosMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security = True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog=laminadoVarela; Integrated Security = True"))
             {
                 try
                 {
                     conexion.Open();
 
-                    string consulta = "SELECT Id_Material, Cantidad_Necesaria FROM " +
+                    string consulta = "SELECT Id_Material, NombreMaterial, Cantidad_Necesaria FROM " +
                                         "MATERIALES_PROYECTOS WHERE Id_Proyecto = @Id_Proyecto;";
 
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
@@ -44,6 +44,7 @@ namespace ProyectoVarela
                         foreach (DataRow row in dataTable.Rows)
                         {
                             ListViewItem item = new ListViewItem(row["Id_Material"].ToString());
+                            item.SubItems.Add(row["NombreMaterial"].ToString());
                             item.SubItems.Add(row["Cantidad_Necesaria"].ToString());
                             listViewMateriales.Items.Add(item);
                         }
@@ -61,13 +62,13 @@ namespace ProyectoVarela
 
         private void DatosHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog = laminadoVarela; Integrated Security = True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog = laminadoVarela; Integrated Security = True"))
             {
                 try
                 {
                     conexion.Open();
 
-                    string consulta = " SELECT Id_Herramienta, Cantidad_Necesaria " +
+                    string consulta = " SELECT Id_Herramienta, NomHerramienta, Cantidad_Necesaria " +
                         "FROM HERRAMIENTAS_PROYECTOS WHERE Id_Proyecto = @Id_Proyecto;";
 
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
@@ -84,6 +85,7 @@ namespace ProyectoVarela
                         foreach (DataRow row in dataTable.Rows)
                         {
                             ListViewItem item = new ListViewItem(row["Id_Herramienta"].ToString());
+                            item.SubItems.Add(row["NomHerramienta"].ToString());
                             item.SubItems.Add(row["Cantidad_Necesaria"].ToString());
                             listViewHerramientas.Items.Add(item);
                         }
@@ -100,13 +102,13 @@ namespace ProyectoVarela
 
         private void DatosProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog=laminadoVarela; Integrated Security=True"))
             {
                 try
                 {
                     conexion.Open();
 
-                    string consulta = "SELECT Nombre_Proyecto, NomCliente,Fecha_Registro FROM PROYECTO WHERE Id_Proyecto=@Id_Proyecto;";
+                    string consulta = "SELECT Nombre_Proyecto, NomCliente FROM PROYECTO WHERE Id_Proyecto=@Id_Proyecto;";
 
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
                     {
@@ -118,45 +120,36 @@ namespace ProyectoVarela
                             {
                                 string nombreProyecto = reader["Nombre_Proyecto"].ToString();
                                 string nomCliente = reader["NomCliente"].ToString();
-                                DateTime fecha = Convert.ToDateTime(reader["Fecha_Registro"]);
 
                                 txtNombreProyecto.Text = nombreProyecto;
                                 txtNombreCliente.Text = nomCliente;
-                                textBox1.Text = fecha.ToString("yyyy-MM-dd");
                             }
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show($"Error al obtener datos del proyecto: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
             }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtId_Proyecto.Text))
-            {
-                MessageBox.Show("INTRODUCE ID.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            else {
-                DatosProyecto();
-                DatosMateriales();
-                DatosHerramientas();
-                CargarComboBoxMateriales();
-                CargarComboBoxHerramientas();
-                    }
+            DatosProyecto();
+            DatosMateriales();
+            DatosHerramientas();
+            CargarComboBoxMateriales();
+            CargarComboBoxHerramientas();
         }
 
         public void CargarComboBoxMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
-                string consulta = "SELECT IDMATERIAL FROM MATERIAL;";
+                string consulta = "SELECT IDMATERIAL, MATERIAL FROM MATERIAL;";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
@@ -165,7 +158,7 @@ namespace ProyectoVarela
                     {
                         while (reader.Read())
                         {
-                            string idMaterial = reader["IDMATERIAL"].ToString();
+                            string idMaterial = reader["MATERIAL"].ToString();
 
                             cbMateriales.Items.Add(idMaterial);
                         }
@@ -176,11 +169,11 @@ namespace ProyectoVarela
 
         public void CargarComboBoxHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
-                string consulta = "SELECT IDHERRAMIENTAS FROM HERRAMIENTAS;";
+                string consulta = "SELECT IDHERRAMIENTAS, NOMBRE FROM HERRAMIENTAS;";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
@@ -189,7 +182,7 @@ namespace ProyectoVarela
                     {
                         while (reader.Read())
                         {
-                            string idHerramienta = reader["IDHERRAMIENTAS"].ToString();
+                            string idHerramienta = reader["NOMBRE"].ToString();
 
                             cbHerramientas.Items.Add(idHerramienta);
                         }
@@ -210,29 +203,34 @@ namespace ProyectoVarela
                 return;
             }
 
-            //using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
-            //{
-            //        conexion.Open();
-                        
-            //            string consulta = "INSERT INTO MATERIALES_PROYECTOS (Id_Material, Cantidad_Necesaria, Id_Proyecto) " +
-            //                        "VALUES(@Id_Material, @Cantidad_Necesaria, @Id_Proyecto);";
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            {
+                try
+                {
+                    conexion.Open();
 
-            //            using (SqlCommand comando = new SqlCommand(consulta, conexion))
-            //            {
-            //                comando.Parameters.AddWithValue("@Id_Material", cbMateriales.Text);
-            //                comando.Parameters.AddWithValue("@Cantidad_Necesaria", txtCantidadM.Text);
-            //                comando.Parameters.AddWithValue("@Id_Proyecto", txtId_Proyecto.Text);
+                    string consulta = "SELECT IDMATERIAL, MATERIAL FROM MATERIAL WHERE MATERIAL = @NomMaterial;";
 
-            //                comando.ExecuteNonQuery();
-            //            }
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@NomMaterial", cbMateriales.Text);
 
-            //}
+                        SqlDataReader reader = comando.ExecuteReader();
+                        reader.Read();
 
-            ListViewItem item = new ListViewItem(cbMateriales.Text);
-            item.SubItems.Add(txtCantidadM.Text);
+                        ListViewItem item = new ListViewItem(reader["IDMATERIAL"].ToString());
+                        item.SubItems.Add(reader["MATERIAL"].ToString());
+                        item.SubItems.Add(txtCantidadM.Text);
 
-            listViewMateriales.Items.Add(item);
-            txtCantidadM.Clear();
+
+                        listViewMateriales.Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al agregar datos a la base de datos: {ex.Message}");
+                }
+            }
         }
 
         private void btnAnadirHerramienta_Click(object sender, EventArgs e)
@@ -242,34 +240,39 @@ namespace ProyectoVarela
                 return;
             }
 
-            //using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
-            //{
-            //    conexion.Open();
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            {
+                try
+                {
+                    conexion.Open();
 
-            //    string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, Cantidad_Necesaria, Id_Proyecto) " +
-            //                        "VALUES(@Id_Herramienta, @Cantidad_Necesaria, @Id_Proyecto);";
+                    string consulta = "SELECT IDHERRAMIENTAS, NOMBRE FROM HERRAMIENTAS WHERE NOMBRE = @NomHerramienta;";
 
-            //    using (SqlCommand comando = new SqlCommand(consulta, conexion))
-            //    {
-            //        comando.Parameters.AddWithValue("@Id_Material", cbHerramientas.Text);
-            //        comando.Parameters.AddWithValue("@Cantidad_Necesaria", txtCantidadH.Text);
-            //        comando.Parameters.AddWithValue("@Id_Proyecto", txtId_Proyecto.Text);
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@NomHerramienta", cbHerramientas.Text);
 
-            //        comando.ExecuteNonQuery();
-            //    }
+                        SqlDataReader reader = comando.ExecuteReader();
+                        reader.Read();
 
-            //}
+                        ListViewItem item = new ListViewItem(reader["IDHERRAMIENTAS"].ToString());
+                        item.SubItems.Add(reader["NOMBRE"].ToString());
+                        item.SubItems.Add(txtCantidadH.Text);
 
-            ListViewItem item = new ListViewItem(cbHerramientas.Text);
-            item.SubItems.Add(txtCantidadH.Text);
 
-            listViewHerramientas.Items.Add(item);
-            txtCantidadH.Clear();
+                        listViewHerramientas.Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ha ocurrido un problema: {ex.Message}");
+                }
+            }
         }
 
         private void EliminarDatosObsoletos()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                     conexion.Open();
 
@@ -288,15 +291,22 @@ namespace ProyectoVarela
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            EliminarDatosObsoletos();
-            RegistrarProyecto();
-            RegistrarMateriales();
-            RegistrarHerramientas();
+            RegistrarProyectos pro = new RegistrarProyectos();
+
+            if (pro.verificarExistencia())
+            {
+                EliminarDatosObsoletos();
+                RegistrarProyecto();
+                RegistrarMateriales();
+                RegistrarHerramientas();
+                pro.ActualizarExistencia();
+            }
+           
         }
 
         private void RegistrarMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -307,14 +317,16 @@ namespace ProyectoVarela
                     {
 
                         string id_material = item.SubItems[0].Text;
-                        int cantidadM = Convert.ToInt32(item.SubItems[1].Text);
+                        string nombreM = item.SubItems[1].Text;
+                        int cantidadM = Convert.ToInt32(item.SubItems[2].Text);
 
-                        string consulta = "INSERT INTO MATERIALES_PROYECTOS (Id_Material, Cantidad_Necesaria, Id_Proyecto) " +
-                                    "VALUES(@Id_Material, @Cantidad_Necesaria, @Id_Proyecto);";
+                        string consulta = "INSERT INTO MATERIALES_PROYECTOS (Id_Material, NombreMaterial, Cantidad_Necesaria, Id_Proyecto) " +
+                                    "VALUES(@Id_Material, @NombreMaterial, @Cantidad_Necesaria, @Id_Proyecto);";
 
                         using (SqlCommand comando = new SqlCommand(consulta, conexion))
                         {
                             comando.Parameters.AddWithValue("@Id_Material", id_material);
+                            comando.Parameters.AddWithValue("@NombreMaterial", nombreM);
                             comando.Parameters.AddWithValue("@Cantidad_Necesaria", cantidadM);
                             comando.Parameters.AddWithValue("@Id_Proyecto", txtId_Proyecto.Text);
 
@@ -333,7 +345,7 @@ namespace ProyectoVarela
 
         private void RegistrarHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -344,14 +356,16 @@ namespace ProyectoVarela
                     {
 
                         string id_herramienta = item.SubItems[0].Text;
-                        int cantidadH = Convert.ToInt32(item.SubItems[1].Text);
+                        string nomHerramienta = item.SubItems[1].Text;
+                        int cantidadH = Convert.ToInt32(item.SubItems[2].Text);
 
-                        string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, Cantidad_Necesaria, Id_Proyecto) " +
-                                    "VALUES(@Id_Herramienta, @Cantidad_Necesaria, @Id_Proyecto);";
+                        string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, NomHerramienta, Cantidad_Necesaria, Id_Proyecto) " +
+                                    "VALUES(@Id_Herramienta, @NomHerramienta, @Cantidad_Necesaria, @Id_Proyecto);";
 
                         using (SqlCommand comando = new SqlCommand(consulta, conexion))
                         {
                             comando.Parameters.AddWithValue("@Id_Herramienta", id_herramienta);
+                            comando.Parameters.AddWithValue("@NomHerramienta", nomHerramienta);
                             comando.Parameters.AddWithValue("@Cantidad_Necesaria", cantidadH);
                             comando.Parameters.AddWithValue("@Id_Proyecto", txtId_Proyecto.Text);
 
@@ -369,7 +383,7 @@ namespace ProyectoVarela
 
         private void RegistrarProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -402,19 +416,7 @@ namespace ProyectoVarela
                 foreach (ListViewItem item in listViewMateriales.SelectedItems)
                 {
                     listViewMateriales.Items.Remove(item);
-                    //using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
-                    //{
-                    //    conexion.Open();
-
-                    //    string consulta = "DELETE FROM MATERIALES_PROYECTOS WHERE Id_Material = @Id_Material;";
-
-                    //    using (SqlCommand comando = new SqlCommand(consulta, conexion))
-                    //    {
-                    //        comando.Parameters.AddWithValue("@Id_Material", item.Text);
-
-                    //        comando.ExecuteNonQuery();
-                    //    }
-                    //}
+                    
                 }
             }
         }
@@ -433,17 +435,7 @@ namespace ProyectoVarela
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Hide();
-        
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(150, Color.SeaGreen);
+           
         }
     }
 }

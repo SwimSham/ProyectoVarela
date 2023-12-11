@@ -1,5 +1,4 @@
-﻿using ProyectoVarela.Utilerias;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +19,10 @@ namespace ProyectoVarela
             InitializeComponent();
         }
 
+
         private void RegistrarMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection(SqlHelper.GetConnectionString()))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -33,14 +33,16 @@ namespace ProyectoVarela
                     {
 
                         string id_material = item.SubItems[0].Text;
-                        int cantidadM = Convert.ToInt32(item.SubItems[1].Text);
+                        string nombreM = item.SubItems[1].Text;
+                        int cantidadM = Convert.ToInt32(item.SubItems[2].Text);
 
-                        string consulta = "INSERT INTO MATERIALES_PROYECTOS (Id_Material, Cantidad_Necesaria, Id_Proyecto) " +
-                                    "VALUES(@Id_Material, @Cantidad_Necesaria, @Id_Proyecto);";
-
+                        string consulta = "INSERT INTO MATERIALES_PROYECTOS (Id_Material, NombreMaterial, Cantidad_Necesaria, Id_Proyecto) " +
+                                    "VALUES(@Id_Material, @NombreMaterial, @Cantidad_Necesaria, @Id_Proyecto);";
+                         
                         using (SqlCommand comando = new SqlCommand(consulta, conexion))
                         {
                             comando.Parameters.AddWithValue("@Id_Material", id_material);
+                            comando.Parameters.AddWithValue("@NombreMaterial", nombreM);
                             comando.Parameters.AddWithValue("@Cantidad_Necesaria", cantidadM);
                             comando.Parameters.AddWithValue("@Id_Proyecto", txtId_Proyecto.Text);
 
@@ -59,7 +61,7 @@ namespace ProyectoVarela
 
         private void RegistrarHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection(SqlHelper.GetConnectionString()))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -70,14 +72,16 @@ namespace ProyectoVarela
                     {
 
                         string id_herramienta = item.SubItems[0].Text;
-                        int cantidadH = Convert.ToInt32(item.SubItems[1].Text);
+                        string nomHerramienta = item.SubItems[1].Text;
+                        int cantidadH = Convert.ToInt32(item.SubItems[2].Text);
 
-                        string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, Cantidad_Necesaria, Id_Proyecto) " +
-                                    "VALUES(@Id_Herramienta, @Cantidad_Necesaria, @Id_Proyecto);";
+                        string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, NomHerramienta, Cantidad_Necesaria, Id_Proyecto) " +
+                                    "VALUES(@Id_Herramienta, @NomHerramienta, @Cantidad_Necesaria, @Id_Proyecto);";
 
                         using (SqlCommand comando = new SqlCommand(consulta, conexion))
                         {
                             comando.Parameters.AddWithValue("@Id_Herramienta", id_herramienta);
+                            comando.Parameters.AddWithValue("@NomHerramienta", nomHerramienta);
                             comando.Parameters.AddWithValue("@Cantidad_Necesaria", cantidadH);
                             comando.Parameters.AddWithValue("@Id_Proyecto", txtId_Proyecto.Text);
 
@@ -95,28 +99,25 @@ namespace ProyectoVarela
 
         private void RegistrarProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection(SqlHelper.GetConnectionString()))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
                 {
                     conexion.Open();
 
-                        string consulta = "INSERT INTO PROYECTO (Id_Proyecto, NomCliente, Nombre_Proyecto,Fecha_Registro) " +
-                                    "VALUES(@IdProyecto, @NombCliente, @Nombre_Proyecto,@fecharegistro);";
+                        string consulta = "INSERT INTO PROYECTO (Id_Proyecto, NomCliente, Nombre_Proyecto, FechaInicio, FechaTerminacion) " +
+                                    "VALUES(@IdProyecto, @NombCliente, @Nombre_Proyecto, @FechaInicio, @FechaTerminacion);";
 
                         using (SqlCommand comando = new SqlCommand(consulta, conexion))
                         {
                             comando.Parameters.AddWithValue("@IdProyecto", txtId_Proyecto.Text);
                             comando.Parameters.AddWithValue("@NombCliente", txtNombreCliente.Text);
                             comando.Parameters.AddWithValue("@Nombre_Proyecto", txtNombreProyecto.Text);
-                        DateTime fecharegistro = fechaprestamo_Datepicker.Value;
-                        string fechaRegistroFormateada = fecharegistro.ToString("yyyy-MM-dd");
-                        comando.Parameters.AddWithValue("@fecharegistro", fechaRegistroFormateada);
+                            comando.Parameters.AddWithValue("@FechaInicio", FechaInicio.Value);
+                            comando.Parameters.AddWithValue("@FechaTerminacion", FechaTerminacion.Value);
 
-
-
-                            comando.ExecuteNonQuery();
+                        comando.ExecuteNonQuery();
                         }
                 }
                 catch (Exception ex)
@@ -126,27 +127,82 @@ namespace ProyectoVarela
             }
         }
 
+
+        public void ActualizarExistencia()
+        {
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            {
+
+                try
+                {
+                    conexion.Open();
+
+                    string consulta = "UPDATE MATERIAL SET EXISTENCIA = GREATEST(0, EXISTENCIA - ISNULL(\r\n    (SELECT SUM(mp.Cantidad_Necesaria)\r\n    FROM MATERIALES_PROYECTOS mp\r\n    WHERE mp.Id_Material = MATERIAL.IDMATERIAL\r\n    AND mp.Id_Proyecto = @IdProyecto GROUP BY Id_Material), 0))\r\nWHERE EXISTS (\r\n    SELECT 1\r\n    FROM MATERIALES_PROYECTOS mp2\r\n    WHERE mp2.Id_Material = MATERIAL.IDMATERIAL\r\n    AND mp2.Id_Proyecto = @IdProyecto\r\n);";
+
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@IdProyecto", txtId_Proyecto.Text);
+
+                        comando.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al agregar datos a la base de datos: {ex.Message}");
+                }
+            }
+        }
+
+        public bool verificarExistencia()
+        {
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            {
+                
+                    conexion.Open();
+
+                    string consulta = "SELECT COUNT(*) FROM MATERIAL WHERE EXISTENCIA = 0;";
+
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        int countExistenciaCero = (int)comando.ExecuteScalar();
+
+                        if (countExistenciaCero > 0)
+                        {
+                            MessageBox.Show("No se puede crear el proyecto. Existencia de materiales es 0.");
+                            return false;
+                        }
+                    }
+                
+            }
+            return true;
+        }
+
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            RegistrarProyecto();
-            RegistrarMateriales();
-            RegistrarHerramientas();
+            if (verificarExistencia())
+            {
+                RegistrarProyecto();
+                RegistrarMateriales();
+                RegistrarHerramientas();
+                ActualizarExistencia();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            
         }
 
 
 
-        private void CargarComboBoxMateriales()
+        public void CargarComboBoxMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection(SqlHelper.GetConnectionString()))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
-                string consulta = "SELECT IDMATERIAL FROM MATERIAL;";
+                string consulta = "SELECT IDMATERIAL, MATERIAL FROM MATERIAL;";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
@@ -155,7 +211,7 @@ namespace ProyectoVarela
                     {
                         while (reader.Read())
                         {
-                            string idMaterial = reader["IDMATERIAL"].ToString();
+                            string idMaterial = reader["MATERIAL"].ToString();
 
                             cbMateriales.Items.Add(idMaterial);
                         }
@@ -164,13 +220,13 @@ namespace ProyectoVarela
             }
         }
 
-        private void CargarComboBoxHerramientas()
+        public void CargarComboBoxHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection(SqlHelper.GetConnectionString()))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
-                string consulta = "SELECT IDHERRAMIENTAS,NOMBRE FROM HERRAMIENTAS;";
+                string consulta = "SELECT IDHERRAMIENTAS, NOMBRE FROM HERRAMIENTAS;";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
@@ -179,10 +235,9 @@ namespace ProyectoVarela
                     {
                         while (reader.Read())
                         {
-                            string idHerramienta = reader["IDHERRAMIENTAS"].ToString();
-                             
+                            string idHerramienta = reader["NOMBRE"].ToString();
+
                             cbHerramientas.Items.Add(idHerramienta);
-                            
                         }
                     }
                 }
@@ -192,7 +247,6 @@ namespace ProyectoVarela
         private void RegistrarProyectos_Load(object sender, EventArgs e)
         {
             CargarComboBoxMateriales();
-            MostrarNombreMaterial();
             CargarComboBoxHerramientas();
         }
 
@@ -206,16 +260,40 @@ namespace ProyectoVarela
 
         private void btnAnadirMateriales_Click(object sender, EventArgs e)
         {
+
             if (string.IsNullOrEmpty(cbMateriales.Text) || string.IsNullOrEmpty(txtCantidadM.Text))
             {
                 return;
             }
 
-            ListViewItem item = new ListViewItem(cbMateriales.Text);
-            item.SubItems.Add(txtCantidadM.Text);
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            {
+                try
+                {
+                    conexion.Open();
 
-            listViewMateriales.Items.Add(item);
-            txtCantidadM.Clear();
+                    string consulta = "SELECT IDMATERIAL, MATERIAL FROM MATERIAL WHERE MATERIAL = @NomMaterial;";
+
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@NomMaterial", cbMateriales.Text);
+
+                        SqlDataReader reader = comando.ExecuteReader();
+                        reader.Read();
+
+                                ListViewItem item = new ListViewItem(reader["IDMATERIAL"].ToString());
+                                item.SubItems.Add(reader["MATERIAL"].ToString());
+                                item.SubItems.Add(txtCantidadM.Text);
+
+
+                                listViewMateriales.Items.Add(item);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al agregar datos a la base de datos: {ex.Message}");
+                }
+            }
         }
 
         private void btnAnadirHerramienta_Click(object sender, EventArgs e)
@@ -225,81 +303,39 @@ namespace ProyectoVarela
                 return;
             }
 
-            ListViewItem item = new ListViewItem(cbHerramientas.Text);
-            item.SubItems.Add(txtCantidadH.Text);
-
-            listViewHerramientas.Items.Add(item);
-            txtCantidadH.Clear();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbHerramientas_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-                
-        }
-        private void MostrarNombreMaterial()
-        {
-            if (cbMateriales.SelectedIndex != -1)
-            {
-                string idMaterialSeleccionada = cbMateriales.SelectedItem.ToString();
-                string nombreMaterial = ObtenerNombreMaterialPorId(idMaterialSeleccionada);
-
-                if (!string.IsNullOrEmpty(nombreMaterial))
-                {
-                    textBox1.Text = nombreMaterial;
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró el nombre correspondiente para la ID seleccionada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-        }
-
-
-        private string ObtenerNombreMaterialPorId(string idMaterial)
-        {
-            string connectionString = SqlHelper.GetConnectionString();
-
-            using (SqlConnection conexion = new SqlConnection(connectionString))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 try
                 {
                     conexion.Open();
 
-                    string consulta = "SELECT MATERIAL FROM MATERIAL WHERE IDMATERIAL = @Id_Material;";
+                    string consulta = "SELECT IDHERRAMIENTAS, NOMBRE FROM HERRAMIENTAS WHERE NOMBRE = @NomHerramienta;";
 
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
                     {
-                        comando.Parameters.AddWithValue("@Id_Material", idMaterial);
+                        comando.Parameters.AddWithValue("@NomHerramienta", cbHerramientas.Text);
 
-                        object resultado = comando.ExecuteScalar();
+                        SqlDataReader reader = comando.ExecuteReader();
+                        reader.Read();
 
-                        if (resultado != null && resultado != DBNull.Value)
-                        {
-                            return resultado.ToString();
-                        }
+                        ListViewItem item = new ListViewItem(reader["IDHERRAMIENTAS"].ToString());
+                        item.SubItems.Add(reader["NOMBRE"].ToString());
+                        item.SubItems.Add(txtCantidadH.Text);
+
+
+                        listViewHerramientas.Items.Add(item);
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al obtener el nombre del material: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"Ha ocurrido un problema: {ex.Message}");
                 }
             }
-
-            return null;
         }
 
-        // ... (resto de tu código)
+        private void listViewMateriales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-    
