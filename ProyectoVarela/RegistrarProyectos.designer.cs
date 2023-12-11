@@ -56,6 +56,11 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtId_Proyecto
@@ -102,7 +107,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label4.Location = new System.Drawing.Point(467, 153);
+            this.label4.Location = new System.Drawing.Point(457, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(115, 16);
             this.label4.TabIndex = 5;
@@ -112,7 +117,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label6.Location = new System.Drawing.Point(352, 190);
+            this.label6.Location = new System.Drawing.Point(345, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 16);
             this.label6.TabIndex = 8;
@@ -148,7 +153,7 @@
             // 
             this.btnAnadirHerramienta.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAnadirHerramienta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnadirHerramienta.Location = new System.Drawing.Point(585, 249);
+            this.btnAnadirHerramienta.Location = new System.Drawing.Point(586, 270);
             this.btnAnadirHerramienta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnadirHerramienta.Name = "btnAnadirHerramienta";
             this.btnAnadirHerramienta.Size = new System.Drawing.Size(80, 31);
@@ -182,7 +187,7 @@
             this.cbHerramientas.BackColor = System.Drawing.Color.LightGreen;
             this.cbHerramientas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbHerramientas.FormattingEnabled = true;
-            this.cbHerramientas.Location = new System.Drawing.Point(489, 185);
+            this.cbHerramientas.Location = new System.Drawing.Point(492, 168);
             this.cbHerramientas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbHerramientas.Name = "cbHerramientas";
             this.cbHerramientas.Size = new System.Drawing.Size(172, 24);
@@ -218,7 +223,7 @@
             // 
             this.txtCantidadH.BackColor = System.Drawing.Color.LightGreen;
             this.txtCantidadH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCantidadH.Location = new System.Drawing.Point(491, 222);
+            this.txtCantidadH.Location = new System.Drawing.Point(493, 244);
             this.txtCantidadH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidadH.Name = "txtCantidadH";
             this.txtCantidadH.Size = new System.Drawing.Size(173, 22);
@@ -228,7 +233,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label7.Location = new System.Drawing.Point(352, 231);
+            this.label7.Location = new System.Drawing.Point(354, 246);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 16);
             this.label7.TabIndex = 32;
@@ -238,7 +243,7 @@
             // 
             this.btnAnadirMateriales.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAnadirMateriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnadirMateriales.Location = new System.Drawing.Point(235, 249);
+            this.btnAnadirMateriales.Location = new System.Drawing.Point(234, 270);
             this.btnAnadirMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAnadirMateriales.Name = "btnAnadirMateriales";
             this.btnAnadirMateriales.Size = new System.Drawing.Size(80, 31);
@@ -251,7 +256,7 @@
             // 
             this.txtCantidadM.BackColor = System.Drawing.Color.LightGreen;
             this.txtCantidadM.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtCantidadM.Location = new System.Drawing.Point(141, 220);
+            this.txtCantidadM.Location = new System.Drawing.Point(142, 244);
             this.txtCantidadM.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCantidadM.Name = "txtCantidadM";
             this.txtCantidadM.Size = new System.Drawing.Size(173, 22);
@@ -261,7 +266,7 @@
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.lblCantidad.Location = new System.Drawing.Point(37, 226);
+            this.lblCantidad.Location = new System.Drawing.Point(38, 244);
             this.lblCantidad.Name = "lblCantidad";
             this.lblCantidad.Size = new System.Drawing.Size(79, 16);
             this.lblCantidad.TabIndex = 39;
@@ -272,17 +277,18 @@
             this.cbMateriales.BackColor = System.Drawing.Color.LightGreen;
             this.cbMateriales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbMateriales.FormattingEnabled = true;
-            this.cbMateriales.Location = new System.Drawing.Point(141, 182);
+            this.cbMateriales.Location = new System.Drawing.Point(142, 171);
             this.cbMateriales.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMateriales.Name = "cbMateriales";
             this.cbMateriales.Size = new System.Drawing.Size(172, 24);
             this.cbMateriales.TabIndex = 38;
+            this.cbMateriales.SelectedIndexChanged += new System.EventHandler(this.RegistrarProyectos_Load);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label5.Location = new System.Drawing.Point(37, 185);
+            this.label5.Location = new System.Drawing.Point(38, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 16);
             this.label5.TabIndex = 37;
@@ -292,7 +298,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label3.Location = new System.Drawing.Point(117, 153);
+            this.label3.Location = new System.Drawing.Point(121, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 16);
             this.label3.TabIndex = 42;
@@ -327,12 +333,69 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.cbHerramientas);
+            this.panel1.Controls.Add(this.txtCantidadH);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.cbMateriales);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.btnAnadirMateriales);
+            this.panel1.Controls.Add(this.txtCantidadM);
+            this.panel1.Controls.Add(this.btnAnadirHerramienta);
+            this.panel1.Controls.Add(this.lblCantidad);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(709, 494);
             this.panel1.TabIndex = 60;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.label8.Location = new System.Drawing.Point(39, 209);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 16);
+            this.label8.TabIndex = 42;
+            this.label8.Text = "NOMBRE";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightGreen;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(142, 207);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(173, 22);
+            this.textBox1.TabIndex = 43;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.label9.Location = new System.Drawing.Point(354, 213);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(66, 16);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "NOMBRE";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.LightGreen;
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Location = new System.Drawing.Point(492, 207);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(173, 22);
+            this.textBox2.TabIndex = 45;
             // 
             // RegistrarProyectos
             // 
@@ -341,23 +404,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(708, 487);
             this.Controls.Add(this.listViewHerramientas);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnAnadirMateriales);
-            this.Controls.Add(this.txtCantidadM);
-            this.Controls.Add(this.lblCantidad);
-            this.Controls.Add(this.cbMateriales);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtCantidadH);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.listViewMateriales);
-            this.Controls.Add(this.cbHerramientas);
             this.Controls.Add(this.lblNombreProyecto);
             this.Controls.Add(this.txtNombreProyecto);
-            this.Controls.Add(this.btnAnadirHerramienta);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNombreCliente);
             this.Controls.Add(this.label1);
@@ -372,6 +423,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Registrar Proyectos | VARELA";
             this.Load += new System.EventHandler(this.RegistrarProyectos_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,5 +459,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
