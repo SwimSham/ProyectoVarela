@@ -20,7 +20,7 @@ namespace ProyectoVarela
 
         public void DatosMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
@@ -42,7 +42,7 @@ namespace ProyectoVarela
 
         public void DatosHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
