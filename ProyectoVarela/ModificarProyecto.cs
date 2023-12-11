@@ -21,7 +21,7 @@ namespace ProyectoVarela
 
         private void DatosMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security = True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog=laminadoVarela; Integrated Security = True"))
             {
                 try
                 {
@@ -61,7 +61,7 @@ namespace ProyectoVarela
 
         private void DatosHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog = laminadoVarela; Integrated Security = True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog = laminadoVarela; Integrated Security = True"))
             {
                 try
                 {
@@ -100,7 +100,7 @@ namespace ProyectoVarela
 
         private void DatosProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog=laminadoVarela; Integrated Security=True"))
             {
                 try
                 {
@@ -143,7 +143,7 @@ namespace ProyectoVarela
 
         public void CargarComboBoxMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
@@ -167,7 +167,7 @@ namespace ProyectoVarela
 
         public void CargarComboBoxHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
@@ -260,7 +260,7 @@ namespace ProyectoVarela
 
         private void EliminarDatosObsoletos()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                     conexion.Open();
 
@@ -287,7 +287,7 @@ namespace ProyectoVarela
 
         private void RegistrarMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -324,7 +324,7 @@ namespace ProyectoVarela
 
         private void RegistrarHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -360,7 +360,7 @@ namespace ProyectoVarela
 
         private void RegistrarProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
