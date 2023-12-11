@@ -192,6 +192,7 @@ namespace ProyectoVarela
         private void RegistrarProyectos_Load(object sender, EventArgs e)
         {
             CargarComboBoxMateriales();
+            MostrarNombreMaterial();
             CargarComboBoxHerramientas();
         }
 
@@ -240,5 +241,65 @@ namespace ProyectoVarela
         {
 
         }
+
+        private void cbHerramientas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+                
+        }
+        private void MostrarNombreMaterial()
+        {
+            if (cbMateriales.SelectedIndex != -1)
+            {
+                string idMaterialSeleccionada = cbMateriales.SelectedItem.ToString();
+                string nombreMaterial = ObtenerNombreMaterialPorId(idMaterialSeleccionada);
+
+                if (!string.IsNullOrEmpty(nombreMaterial))
+                {
+                    textBox1.Text = nombreMaterial;
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el nombre correspondiente para la ID seleccionada.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+        }
+
+
+        private string ObtenerNombreMaterialPorId(string idMaterial)
+        {
+            string connectionString = SqlHelper.GetConnectionString();
+
+            using (SqlConnection conexion = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conexion.Open();
+
+                    string consulta = "SELECT MATERIAL FROM MATERIAL WHERE IDMATERIAL = @Id_Material;";
+
+                    using (SqlCommand comando = new SqlCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@Id_Material", idMaterial);
+
+                        object resultado = comando.ExecuteScalar();
+
+                        if (resultado != null && resultado != DBNull.Value)
+                        {
+                            return resultado.ToString();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al obtener el nombre del material: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return null;
+        }
+
+        // ... (resto de tu código)
     }
 }
+    

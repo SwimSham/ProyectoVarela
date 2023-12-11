@@ -56,12 +56,12 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.fechaprestamo_Datepicker = new System.Windows.Forms.DateTimePicker();
+            this.txtNombreHerramienta = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.fechaprestamo_Datepicker = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -194,6 +194,7 @@
             this.cbHerramientas.Name = "cbHerramientas";
             this.cbHerramientas.Size = new System.Drawing.Size(172, 24);
             this.cbHerramientas.TabIndex = 27;
+            this.cbHerramientas.SelectedIndexChanged += new System.EventHandler(this.cbHerramientas_SelectedIndexChanged);
             // 
             // listViewMateriales
             // 
@@ -337,7 +338,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.fechaprestamo_Datepicker);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtNombreHerramienta);
             this.panel1.Controls.Add(this.txtNombreProyecto);
             this.panel1.Controls.Add(this.lblNombreProyecto);
             this.panel1.Controls.Add(this.label9);
@@ -366,15 +367,34 @@
             this.panel1.TabIndex = 60;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // textBox2
+            // label10
             // 
-            this.textBox2.BackColor = System.Drawing.Color.LightGreen;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(492, 207);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(173, 22);
-            this.textBox2.TabIndex = 45;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.label10.Location = new System.Drawing.Point(38, 100);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(125, 16);
+            this.label10.TabIndex = 121;
+            this.label10.Text = "FECHA REGISTRO";
+            // 
+            // fechaprestamo_Datepicker
+            // 
+            this.fechaprestamo_Datepicker.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fechaprestamo_Datepicker.Location = new System.Drawing.Point(208, 100);
+            this.fechaprestamo_Datepicker.Margin = new System.Windows.Forms.Padding(4);
+            this.fechaprestamo_Datepicker.Name = "fechaprestamo_Datepicker";
+            this.fechaprestamo_Datepicker.Size = new System.Drawing.Size(259, 25);
+            this.fechaprestamo_Datepicker.TabIndex = 120;
+            // 
+            // txtNombreHerramienta
+            // 
+            this.txtNombreHerramienta.BackColor = System.Drawing.Color.LightGreen;
+            this.txtNombreHerramienta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreHerramienta.Location = new System.Drawing.Point(492, 207);
+            this.txtNombreHerramienta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombreHerramienta.Name = "txtNombreHerramienta";
+            this.txtNombreHerramienta.Size = new System.Drawing.Size(173, 22);
+            this.txtNombreHerramienta.TabIndex = 45;
             // 
             // label9
             // 
@@ -406,25 +426,6 @@
             this.label8.TabIndex = 42;
             this.label8.Text = "NOMBRE";
             this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
-            // fechaprestamo_Datepicker
-            // 
-            this.fechaprestamo_Datepicker.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fechaprestamo_Datepicker.Location = new System.Drawing.Point(208, 100);
-            this.fechaprestamo_Datepicker.Margin = new System.Windows.Forms.Padding(4);
-            this.fechaprestamo_Datepicker.Name = "fechaprestamo_Datepicker";
-            this.fechaprestamo_Datepicker.Size = new System.Drawing.Size(259, 25);
-            this.fechaprestamo_Datepicker.TabIndex = 120;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.label10.Location = new System.Drawing.Point(38, 100);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(125, 16);
-            this.label10.TabIndex = 121;
-            this.label10.Text = "FECHA REGISTRO";
             // 
             // RegistrarProyectos
             // 
@@ -482,7 +483,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombreHerramienta;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
