@@ -28,249 +28,353 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarProyecto));
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_idproyecto = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_Mostrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btn_modificar = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.listViewHerramientas = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnAnadirMateriales = new System.Windows.Forms.Button();
+            this.txtCantidadM = new System.Windows.Forms.TextBox();
+            this.lblCantidad = new System.Windows.Forms.Label();
+            this.cbMateriales = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCantidadH = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.listViewMateriales = new System.Windows.Forms.ListView();
+            this.Id_Material = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CantidadM = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbHerramientas = new System.Windows.Forms.ComboBox();
+            this.lblNombreProyecto = new System.Windows.Forms.Label();
+            this.txtNombreProyecto = new System.Windows.Forms.TextBox();
+            this.btnAnadirHerramienta = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_salir = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.btnEliminarH = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtId_Proyecto = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnEliminarM = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label2
+            // listViewHerramientas
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ID PROYECTO";
+            this.listViewHerramientas.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listViewHerramientas.HideSelection = false;
+            this.listViewHerramientas.Location = new System.Drawing.Point(347, 275);
+            this.listViewHerramientas.Name = "listViewHerramientas";
+            this.listViewHerramientas.Size = new System.Drawing.Size(308, 204);
+            this.listViewHerramientas.TabIndex = 63;
+            this.listViewHerramientas.UseCompatibleStateImageBehavior = false;
+            this.listViewHerramientas.View = System.Windows.Forms.View.Details;
             // 
-            // txt_idproyecto
+            // columnHeader1
             // 
-            this.txt_idproyecto.BackColor = System.Drawing.Color.LightGreen;
-            this.txt_idproyecto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_idproyecto.Location = new System.Drawing.Point(119, 28);
-            this.txt_idproyecto.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_idproyecto.Name = "txt_idproyecto";
-            this.txt_idproyecto.Size = new System.Drawing.Size(101, 22);
-            this.txt_idproyecto.TabIndex = 2;
+            this.columnHeader1.Text = "Id_Herramienta";
+            this.columnHeader1.Width = 91;
             // 
-            // dataGridView1
+            // columnHeader2
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.SeaGreen;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.DarkSeaGreen;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 80);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(276, 123);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // btn_Mostrar
-            // 
-            this.btn_Mostrar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btn_Mostrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Mostrar.Location = new System.Drawing.Point(225, 25);
-            this.btn_Mostrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Mostrar.Name = "btn_Mostrar";
-            this.btn_Mostrar.Size = new System.Drawing.Size(80, 31);
-            this.btn_Mostrar.TabIndex = 4;
-            this.btn_Mostrar.Text = "Mostrar";
-            this.btn_Mostrar.UseVisualStyleBackColor = false;
-            this.btn_Mostrar.Click += new System.EventHandler(this.btn_Mostrar_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(895, 261);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btn_modificar
-            // 
-            this.btn_modificar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_modificar.Location = new System.Drawing.Point(559, 116);
-            this.btn_modificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(80, 31);
-            this.btn_modificar.TabIndex = 6;
-            this.btn_modificar.Text = "Modificar";
-            this.btn_modificar.UseVisualStyleBackColor = false;
-            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.SeaGreen;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.GridColor = System.Drawing.Color.DarkSeaGreen;
-            this.dataGridView2.Location = new System.Drawing.Point(349, 151);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(303, 204);
-            this.dataGridView2.TabIndex = 7;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(673, 290);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(297, 204);
-            this.dataGridView3.TabIndex = 8;
+            this.columnHeader2.Text = "Cantidad Herramienta";
+            this.columnHeader2.Width = 118;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 46);
+            this.label3.Location = new System.Drawing.Point(109, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "NUEVA EXISTENCIA";
+            this.label3.Size = new System.Drawing.Size(95, 16);
+            this.label3.TabIndex = 62;
+            this.label3.Text = "MATERIALES:";
             // 
-            // textBox1
+            // btnAnadirMateriales
             // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGreen;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(169, 42);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(101, 22);
-            this.textBox1.TabIndex = 10;
+            this.btnAnadirMateriales.Location = new System.Drawing.Point(225, 234);
+            this.btnAnadirMateriales.Name = "btnAnadirMateriales";
+            this.btnAnadirMateriales.Size = new System.Drawing.Size(80, 32);
+            this.btnAnadirMateriales.TabIndex = 61;
+            this.btnAnadirMateriales.Text = "Añadir";
+            this.btnAnadirMateriales.UseVisualStyleBackColor = true;
+            this.btnAnadirMateriales.Click += new System.EventHandler(this.btnAnadirMateriales_Click);
             // 
-            // comboBox1
+            // txtCantidadM
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.LightGreen;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(469, 55);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 11;
+            this.txtCantidadM.Location = new System.Drawing.Point(133, 206);
+            this.txtCantidadM.Name = "txtCantidadM";
+            this.txtCantidadM.Size = new System.Drawing.Size(172, 22);
+            this.txtCantidadM.TabIndex = 60;
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Location = new System.Drawing.Point(30, 213);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(79, 16);
+            this.lblCantidad.TabIndex = 59;
+            this.lblCantidad.Text = "CANTIDAD:";
+            // 
+            // cbMateriales
+            // 
+            this.cbMateriales.FormattingEnabled = true;
+            this.cbMateriales.Location = new System.Drawing.Point(133, 168);
+            this.cbMateriales.Name = "cbMateriales";
+            this.cbMateriales.Size = new System.Drawing.Size(172, 24);
+            this.cbMateriales.TabIndex = 58;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(30, 171);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 16);
+            this.label5.TabIndex = 57;
+            this.label5.Text = "ID_MATERIAL:";
+            // 
+            // txtCantidadH
+            // 
+            this.txtCantidadH.Location = new System.Drawing.Point(483, 207);
+            this.txtCantidadH.Name = "txtCantidadH";
+            this.txtCantidadH.Size = new System.Drawing.Size(172, 22);
+            this.txtCantidadH.TabIndex = 56;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(344, 218);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(79, 16);
+            this.label7.TabIndex = 55;
+            this.label7.Text = "CANTIDAD:";
+            // 
+            // listViewMateriales
+            // 
+            this.listViewMateriales.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id_Material,
+            this.CantidadM});
+            this.listViewMateriales.HideSelection = false;
+            this.listViewMateriales.Location = new System.Drawing.Point(33, 275);
+            this.listViewMateriales.Name = "listViewMateriales";
+            this.listViewMateriales.Size = new System.Drawing.Size(272, 204);
+            this.listViewMateriales.TabIndex = 54;
+            this.listViewMateriales.UseCompatibleStateImageBehavior = false;
+            this.listViewMateriales.View = System.Windows.Forms.View.Details;
+            // 
+            // Id_Material
+            // 
+            this.Id_Material.Text = "Id_Material";
+            this.Id_Material.Width = 91;
+            // 
+            // CantidadM
+            // 
+            this.CantidadM.Text = "Cantidad Material";
+            this.CantidadM.Width = 102;
+            // 
+            // cbHerramientas
+            // 
+            this.cbHerramientas.FormattingEnabled = true;
+            this.cbHerramientas.Location = new System.Drawing.Point(481, 171);
+            this.cbHerramientas.Name = "cbHerramientas";
+            this.cbHerramientas.Size = new System.Drawing.Size(172, 24);
+            this.cbHerramientas.TabIndex = 53;
+            // 
+            // lblNombreProyecto
+            // 
+            this.lblNombreProyecto.AutoSize = true;
+            this.lblNombreProyecto.Location = new System.Drawing.Point(35, 94);
+            this.lblNombreProyecto.Name = "lblNombreProyecto";
+            this.lblNombreProyecto.Size = new System.Drawing.Size(151, 16);
+            this.lblNombreProyecto.TabIndex = 52;
+            this.lblNombreProyecto.Text = "NOMBRE_PROYECTO:";
+            // 
+            // txtNombreProyecto
+            // 
+            this.txtNombreProyecto.Location = new System.Drawing.Point(208, 91);
+            this.txtNombreProyecto.Name = "txtNombreProyecto";
+            this.txtNombreProyecto.Size = new System.Drawing.Size(218, 22);
+            this.txtNombreProyecto.TabIndex = 51;
+            // 
+            // btnAnadirHerramienta
+            // 
+            this.btnAnadirHerramienta.Location = new System.Drawing.Point(573, 234);
+            this.btnAnadirHerramienta.Name = "btnAnadirHerramienta";
+            this.btnAnadirHerramienta.Size = new System.Drawing.Size(80, 32);
+            this.btnAnadirHerramienta.TabIndex = 50;
+            this.btnAnadirHerramienta.Text = "Añadir";
+            this.btnAnadirHerramienta.UseVisualStyleBackColor = true;
+            this.btnAnadirHerramienta.Click += new System.EventHandler(this.btnAnadirHerramienta_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(562, 486);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(91, 31);
+            this.btnGuardar.TabIndex = 49;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(464, 486);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(92, 31);
+            this.btnSalir.TabIndex = 48;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(344, 176);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 16);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "ID_HERRAMIENTA:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 15);
+            this.label4.Location = new System.Drawing.Point(458, 139);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 16);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "ID MATERIAL";
+            this.label4.Size = new System.Drawing.Size(118, 16);
+            this.label4.TabIndex = 46;
+            this.label4.Text = "HERRAMIENTAS:";
             // 
-            // btn_salir
+            // label2
             // 
-            this.btn_salir.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_salir.Location = new System.Drawing.Point(15, 321);
-            this.btn_salir.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(80, 31);
-            this.btn_salir.TabIndex = 13;
-            this.btn_salir.Text = "Cerrar";
-            this.btn_salir.UseVisualStyleBackColor = false;
-            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(35, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 16);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "NOMBRE_CLIENTE:";
             // 
-            // panel1
+            // txtNombreCliente
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(4, -14);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(307, 89);
-            this.panel1.TabIndex = 14;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.txtNombreCliente.Location = new System.Drawing.Point(208, 63);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(218, 22);
+            this.txtNombreCliente.TabIndex = 44;
             // 
-            // panel2
+            // btnEliminarH
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(321, 44);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(331, 118);
-            this.panel2.TabIndex = 15;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            this.btnEliminarH.Location = new System.Drawing.Point(483, 235);
+            this.btnEliminarH.Name = "btnEliminarH";
+            this.btnEliminarH.Size = new System.Drawing.Size(80, 31);
+            this.btnEliminarH.TabIndex = 65;
+            this.btnEliminarH.Text = "Eliminar";
+            this.btnEliminarH.UseVisualStyleBackColor = true;
+            this.btnEliminarH.Click += new System.EventHandler(this.btnEliminarH_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 16);
+            this.label1.TabIndex = 67;
+            this.label1.Text = "ID_PROYECTO:";
+            // 
+            // txtId_Proyecto
+            // 
+            this.txtId_Proyecto.Location = new System.Drawing.Point(208, 18);
+            this.txtId_Proyecto.Name = "txtId_Proyecto";
+            this.txtId_Proyecto.Size = new System.Drawing.Size(218, 22);
+            this.txtId_Proyecto.TabIndex = 66;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(442, 15);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(88, 28);
+            this.btnBuscar.TabIndex = 68;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnEliminarM
+            // 
+            this.btnEliminarM.Location = new System.Drawing.Point(133, 234);
+            this.btnEliminarM.Name = "btnEliminarM";
+            this.btnEliminarM.Size = new System.Drawing.Size(80, 31);
+            this.btnEliminarM.TabIndex = 70;
+            this.btnEliminarM.Text = "Eliminar";
+            this.btnEliminarM.UseVisualStyleBackColor = true;
+            this.btnEliminarM.Click += new System.EventHandler(this.btnEliminarM_Click);
             // 
             // ModificarProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(667, 369);
-            this.Controls.Add(this.btn_salir);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.btn_modificar);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_Mostrar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.txt_idproyecto);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
+            this.ClientSize = new System.Drawing.Size(688, 531);
+            this.Controls.Add(this.btnEliminarM);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtId_Proyecto);
+            this.Controls.Add(this.btnEliminarH);
+            this.Controls.Add(this.listViewHerramientas);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnAnadirMateriales);
+            this.Controls.Add(this.txtCantidadM);
+            this.Controls.Add(this.lblCantidad);
+            this.Controls.Add(this.cbMateriales);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtCantidadH);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.listViewMateriales);
+            this.Controls.Add(this.cbHerramientas);
+            this.Controls.Add(this.lblNombreProyecto);
+            this.Controls.Add(this.txtNombreProyecto);
+            this.Controls.Add(this.btnAnadirHerramienta);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtNombreCliente);
             this.Name = "ModificarProyecto";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Modificar Proyecto | VARELA";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.Text = "ModificarProyecto";
+            this.Load += new System.EventHandler(this.ModificarProyecto_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_idproyecto;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btn_Mostrar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_modificar;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView3;
+
+        private System.Windows.Forms.ListView listViewHerramientas;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnAnadirMateriales;
+        private System.Windows.Forms.TextBox txtCantidadM;
+        private System.Windows.Forms.Label lblCantidad;
+        private System.Windows.Forms.ComboBox cbMateriales;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtCantidadH;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListView listViewMateriales;
+        private System.Windows.Forms.ColumnHeader Id_Material;
+        private System.Windows.Forms.ColumnHeader CantidadM;
+        private System.Windows.Forms.ComboBox cbHerramientas;
+        private System.Windows.Forms.Label lblNombreProyecto;
+        private System.Windows.Forms.TextBox txtNombreProyecto;
+        private System.Windows.Forms.Button btnAnadirHerramienta;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btn_salir;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNombreCliente;
+        private System.Windows.Forms.Button btnEliminarH;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtId_Proyecto;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnEliminarM;
     }
 }

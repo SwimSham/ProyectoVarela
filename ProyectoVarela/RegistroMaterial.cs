@@ -21,16 +21,33 @@ namespace ProyectoVarela
         private void btn_registrar_Click(object sender, EventArgs e)
         {
             {
-                if (string.IsNullOrEmpty(txt_material.Text)
-                    && string.IsNullOrEmpty(txt_tipo.Text)
-                    && string.IsNullOrEmpty(txt_calibre.Text)
-                     && string.IsNullOrEmpty(txt_medida.Text)
-                      && string.IsNullOrEmpty(txt_existencia.Text))
-
+                if (string.IsNullOrEmpty(txt_material.Text))
                 {
                     MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                   if (string.IsNullOrEmpty(txt_tipo.Text))
+                     {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                    if(string.IsNullOrEmpty(txt_calibre.Text))
+                     {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                     if(string.IsNullOrEmpty(txt_medida.Text))
+                {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                      if(string.IsNullOrEmpty(txt_existencia.Text))
+                {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                
                 using (SqlConnection cn = new SqlConnection(SqlHelper.GetConnectionString()))
                 {
                     cn.Open();
@@ -48,8 +65,6 @@ namespace ProyectoVarela
                     {
                         MessageBox.Show("REGISTRO COMPLETADO.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        RegistroMaterial registroMaterial = new RegistroMaterial();
-                        registroMaterial.ShowDialog();
                         txt_idmaterial.Text = string.Empty;
                         txt_material.Text = string.Empty;
                         txt_tipo.Text = string.Empty;

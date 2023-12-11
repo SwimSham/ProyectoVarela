@@ -1,8 +1,15 @@
 ﻿using ProyectoVarela.Utilerias;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ProyectoVarela
 {
@@ -158,7 +165,7 @@ namespace ProyectoVarela
             {
                 conexion.Open();
 
-                string consulta = "SELECT IDHERRAMIENTAS FROM HERRAMIENTAS;";
+                string consulta = "SELECT IDHERRAMIENTAS,NOMBRE FROM HERRAMIENTAS;";
 
                 using (SqlCommand comando = new SqlCommand(consulta, conexion))
                 {
@@ -168,8 +175,9 @@ namespace ProyectoVarela
                         while (reader.Read())
                         {
                             string idHerramienta = reader["IDHERRAMIENTAS"].ToString();
-
+                             
                             cbHerramientas.Items.Add(idHerramienta);
+                            
                         }
                     }
                 }
@@ -221,6 +229,11 @@ namespace ProyectoVarela
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

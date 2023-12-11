@@ -32,12 +32,32 @@ namespace ProyectoVarela
         {
             {
                 if
-                    (string.IsNullOrEmpty(txt_idempleado.Text)
-                    && string.IsNullOrEmpty(txt_nombre.Text)
-                    && string.IsNullOrEmpty(txt_direccion.Text)
-                    && string.IsNullOrEmpty(txt_correo.Text)
-                    && string.IsNullOrEmpty(txt_celular.Text)
-                    && string.IsNullOrEmpty(txt_puesto.Text)) 
+                    (string.IsNullOrEmpty(txt_idempleado.Text))
+                {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                    if( string.IsNullOrEmpty(txt_nombre.Text))
+                {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                    if( string.IsNullOrEmpty(txt_direccion.Text))
+                {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                    if( string.IsNullOrEmpty(txt_correo.Text))
+                {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                    if(string.IsNullOrEmpty(txt_celular.Text))
+                {
+                    MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                    if( string.IsNullOrEmpty(txt_puesto.Text)) 
 
                 {
                     MessageBox.Show("LLENA TODOS LOS CAMPOS.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -61,8 +81,7 @@ namespace ProyectoVarela
                     {
                         MessageBox.Show("REGISTRO COMPLETADO.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        RegistroEmpleados registroEmpleados = new RegistroEmpleados();
-                        registroEmpleados.ShowDialog();
+                     
                         txt_idempleado.Text = string.Empty;
                         txt_nombre.Text = string.Empty;
                         txt_direccion.Text = string.Empty;

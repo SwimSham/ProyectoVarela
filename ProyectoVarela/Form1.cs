@@ -46,7 +46,7 @@ namespace ProyectoVarela
 
         private void btn_proyecto_Click(object sender, EventArgs e)
         {
-            Proyecto proy = new Proyecto();
+            ConsultarProyecto proy = new ConsultarProyecto();
             proy.ShowDialog(this);
         }
 

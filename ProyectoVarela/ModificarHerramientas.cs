@@ -93,8 +93,7 @@ namespace ProyectoVarela
                     {
                         MessageBox.Show("SE ACTUALIZÓ CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        ConsultarHerramienta modificar = new ConsultarHerramienta();
-                        modificar.Show();
+                       
 
                         txtNombre.Text = string.Empty;
                         txtHerramienta.Text = string.Empty;
@@ -138,8 +137,7 @@ namespace ProyectoVarela
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("HERRAMIENTA ELIMINADO CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        ConsultarHerramienta modificar = new ConsultarHerramienta();
-                        modificar.Show();
+                       
                         txtNombre.Text = string.Empty;
                         txtHerramienta.Text = string.Empty;
                         txtExistencia.Text = string.Empty;
