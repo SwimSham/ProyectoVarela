@@ -100,7 +100,7 @@ namespace ProyectoVarela
 
         private void DatosProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517J; Initial Catalog=laminadoVarela; Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security=True"))
             {
                 try
                 {
@@ -287,7 +287,7 @@ namespace ProyectoVarela
 
         private void RegistrarMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -426,6 +426,16 @@ namespace ProyectoVarela
             this.Hide();
             Proyecto proy = new Proyecto();
             proy.ShowDialog();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            panel1.BackColor = Color.FromArgb(150, Color.SeaGreen);
         }
     }
 }
