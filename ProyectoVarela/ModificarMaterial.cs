@@ -35,11 +35,11 @@ namespace ProyectoVarela
                     SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
-                        lbl_material.Text = reader["MATERIAL"].ToString();
-                        lbl_tipo.Text = reader["TIPO"].ToString();
-                        lbl_calibre.Text = reader["CALIBRE"].ToString();
-                        lbl_medida.Text = reader["MEDIDA"].ToString();
-                        lbl_existencia.Text = reader["EXISTENCIA"].ToString();
+                        txtNombre.Text = reader["MATERIAL"].ToString();
+                        textBox1.Text = reader["TIPO"].ToString();
+                        textBox2.Text = reader["CALIBRE"].ToString();
+                        textBox3.Text = reader["MEDIDA"].ToString();
+                        textBox4.Text = reader["EXISTENCIA"].ToString();
 
                     }
                     else
@@ -70,27 +70,27 @@ namespace ProyectoVarela
                 }
                 if (string.IsNullOrEmpty(txt_material.Text))
                 {
-                    txt_material.Text = lbl_material.Text;
+                    txt_material.Text = txtNombre.Text;
                     return;
                 }
                 if (string.IsNullOrEmpty(txt_tipo.Text))
                 {
-                    txt_tipo.Text = lbl_tipo.Text;
+                    txt_tipo.Text = textBox1.Text;
                     return;
                 }
                 if (string.IsNullOrEmpty(txt_calibre.Text))
                 {
-                    txt_calibre.Text = lbl_calibre.Text;
+                    txt_calibre.Text = textBox2.Text;
                     return;
                 }
                 if (string.IsNullOrEmpty(txt_medida.Text))
                 {
-                    txt_medida.Text = lbl_medida.Text;
+                    txt_medida.Text = textBox3.Text;
                     return;
                 }
                 if (string.IsNullOrEmpty(txt_existencia.Text))
                 {
-                    txt_existencia.Text = lbl_existencia.Text;
+                    txt_existencia.Text = textBox4.Text;
                     return;
                 }
 
@@ -111,8 +111,7 @@ namespace ProyectoVarela
                     {
                         MessageBox.Show("SE ACTUALIZÓ CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        ConsultarMaterial modificar = new ConsultarMaterial();
-                        modificar.Show();
+                      
 
                         lbl_material.Text = string.Empty;
                         lbl_tipo.Text = string.Empty;
@@ -160,8 +159,7 @@ namespace ProyectoVarela
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("MATERIAL ELIMINADO CORRECTAMENTE.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Hide();
-                        ConsultarMaterial modificar = new ConsultarMaterial();
-                        modificar.Show();
+                  
                         lbl_material.Text = string.Empty;
                         lbl_tipo.Text = string.Empty;
                         lbl_medida.Text = string.Empty;
