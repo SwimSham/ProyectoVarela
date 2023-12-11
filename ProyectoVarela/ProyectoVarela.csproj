@@ -188,6 +188,12 @@
     <Compile Include="RegistroProvedor.Designer.cs">
       <DependentUpon>RegistroProvedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportePrestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportePrestamos.Designer.cs">
+      <DependentUpon>ReportePrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilerias\SqlHelper.cs" />
     <EmbeddedResource Include="ConsultarEmpleados.resx">
       <DependentUpon>ConsultarEmpleados.cs</DependentUpon>

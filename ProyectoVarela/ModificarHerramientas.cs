@@ -39,9 +39,9 @@ namespace ProyectoVarela
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    lbl_nombre.Text = reader["NOMBRE"].ToString();
-                    lbl_tipoh.Text = reader["TIPOHERRAMIENTAS"].ToString();
-                    lbl_existencia.Text = reader["EXISTENCIAH"].ToString();
+                    txtNombre.Text = reader["NOMBRE"].ToString();
+                    txtHerramienta.Text = reader["TIPOHERRAMIENTAS"].ToString();
+                    txtExistencia.Text = reader["EXISTENCIAH"].ToString();
                 }
                 else
                 {
@@ -63,17 +63,17 @@ namespace ProyectoVarela
                 }
                 if (string.IsNullOrEmpty(txt_nombre.Text))
                 {
-                    txt_nombre.Text = lbl_nombre.Text;
+                    txt_nombre.Text = txtNombre.Text;
                     return;
                 }
                 if (string.IsNullOrEmpty(txt_tipo.Text))
                 {
-                    txt_tipo.Text = lbl_tipoh.Text;
+                    txt_tipo.Text = txtHerramienta.Text;
                     return;
                 }
                 if (string.IsNullOrEmpty(txt_existencia.Text))
                 {
-                    txt_existencia.Text = lbl_existencia.Text;
+                    txt_existencia.Text = txtExistencia.Text;
                     return;
                 }
                
@@ -96,9 +96,9 @@ namespace ProyectoVarela
                         ConsultarHerramienta modificar = new ConsultarHerramienta();
                         modificar.Show();
 
-                        lbl_nombre.Text = string.Empty;
-                        lbl_tipoh.Text = string.Empty;
-                        lbl_existencia.Text = string.Empty;
+                        txtNombre.Text = string.Empty;
+                        txtHerramienta.Text = string.Empty;
+                        txtExistencia.Text = string.Empty;
                         txt_idherramienta.Text = string.Empty;
                         txt_nombre.Text = string.Empty;
                         txt_tipo.Text = string.Empty;
@@ -140,9 +140,9 @@ namespace ProyectoVarela
                         this.Hide();
                         ConsultarHerramienta modificar = new ConsultarHerramienta();
                         modificar.Show();
-                        lbl_nombre.Text = string.Empty;
-                        lbl_tipoh.Text = string.Empty;
-                        lbl_existencia.Text = string.Empty;
+                        txtNombre.Text = string.Empty;
+                        txtHerramienta.Text = string.Empty;
+                        txtExistencia.Text = string.Empty;
                         txt_idherramienta.Text = string.Empty;
                         txt_nombre.Text = string.Empty;
                         txt_tipo.Text = string.Empty;
