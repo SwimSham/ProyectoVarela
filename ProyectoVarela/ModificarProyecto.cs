@@ -21,7 +21,7 @@ namespace ProyectoVarela
 
         private void DatosMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog=laminadoVarela; Integrated Security = True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security = True"))
             {
                 try
                 {
@@ -62,13 +62,13 @@ namespace ProyectoVarela
 
         private void DatosHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog = laminadoVarela; Integrated Security = True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog =laminadoVarela; Integrated Security = True"))
             {
                 try
                 {
                     conexion.Open();
 
-                    string consulta = " SELECT Id_Herramienta, NomHerramienta, Cantidad_Necesaria " +
+                    string consulta = " SELECT Id_Herramienta, NombreHerramientas, Cantidad_Necesaria " +
                         "FROM HERRAMIENTAS_PROYECTOS WHERE Id_Proyecto = @Id_Proyecto;";
 
                     using (SqlCommand comando = new SqlCommand(consulta, conexion))
@@ -85,7 +85,7 @@ namespace ProyectoVarela
                         foreach (DataRow row in dataTable.Rows)
                         {
                             ListViewItem item = new ListViewItem(row["Id_Herramienta"].ToString());
-                            item.SubItems.Add(row["NomHerramienta"].ToString());
+                            item.SubItems.Add(row["NombreHerramientas"].ToString());
                             item.SubItems.Add(row["Cantidad_Necesaria"].ToString());
                             listViewHerramientas.Items.Add(item);
                         }
@@ -102,7 +102,7 @@ namespace ProyectoVarela
 
         private void DatosProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ; Initial Catalog=laminadoVarela; Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517; Initial Catalog=laminadoVarela; Integrated Security=True"))
             {
                 try
                 {
@@ -145,7 +145,7 @@ namespace ProyectoVarela
 
         public void CargarComboBoxMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
@@ -169,7 +169,7 @@ namespace ProyectoVarela
 
         public void CargarComboBoxHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 conexion.Open();
 
@@ -203,7 +203,7 @@ namespace ProyectoVarela
                 return;
             }
 
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 try
                 {
@@ -240,7 +240,7 @@ namespace ProyectoVarela
                 return;
             }
 
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                 try
                 {
@@ -272,7 +272,7 @@ namespace ProyectoVarela
 
         private void EliminarDatosObsoletos()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
                     conexion.Open();
 
@@ -306,7 +306,7 @@ namespace ProyectoVarela
 
         private void RegistrarMateriales()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -345,7 +345,7 @@ namespace ProyectoVarela
 
         private void RegistrarHerramientas()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try
@@ -359,7 +359,7 @@ namespace ProyectoVarela
                         string nomHerramienta = item.SubItems[1].Text;
                         int cantidadH = Convert.ToInt32(item.SubItems[2].Text);
 
-                        string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, NomHerramienta, Cantidad_Necesaria, Id_Proyecto) " +
+                        string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, NombreHerramientas, Cantidad_Necesaria, Id_Proyecto) " +
                                     "VALUES(@Id_Herramienta, @NomHerramienta, @Cantidad_Necesaria, @Id_Proyecto);";
 
                         using (SqlCommand comando = new SqlCommand(consulta, conexion))
@@ -383,7 +383,7 @@ namespace ProyectoVarela
 
         private void RegistrarProyecto()
         {
-            using (SqlConnection conexion = new SqlConnection("Data Source=DESKTOP-PCHPOMJ;Initial Catalog=laminadoVarela;Integrated Security=True"))
+            using (SqlConnection conexion = new SqlConnection("Data Source=GWNR71517;Initial Catalog=laminadoVarela;Integrated Security=True"))
             {
 
                 try

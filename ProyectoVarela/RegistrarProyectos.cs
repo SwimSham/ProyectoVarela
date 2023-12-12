@@ -75,7 +75,7 @@ namespace ProyectoVarela
                         string nomHerramienta = item.SubItems[1].Text;
                         int cantidadH = Convert.ToInt32(item.SubItems[2].Text);
 
-                        string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, NomHerramienta, Cantidad_Necesaria, Id_Proyecto) " +
+                        string consulta = "INSERT INTO HERRAMIENTAS_PROYECTOS (Id_Herramienta, NombreHerramientas, Cantidad_Necesaria, Id_Proyecto) " +
                                     "VALUES(@Id_Herramienta, @NomHerramienta, @Cantidad_Necesaria, @Id_Proyecto);";
 
                         using (SqlCommand comando = new SqlCommand(consulta, conexion))

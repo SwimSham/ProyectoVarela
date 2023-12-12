@@ -117,9 +117,9 @@
             this.label6.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.label6.Location = new System.Drawing.Point(352, 190);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 16);
+            this.label6.Size = new System.Drawing.Size(66, 16);
             this.label6.TabIndex = 8;
-            this.label6.Text = "ID HERRAMIENTA:";
+            this.label6.Text = "NOMBRE";
             // 
             // btnSalir
             // 
@@ -279,9 +279,9 @@
             this.label5.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.label5.Location = new System.Drawing.Point(38, 185);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 16);
+            this.label5.Size = new System.Drawing.Size(66, 16);
             this.label5.TabIndex = 37;
-            this.label5.Text = "ID MATERIAL:";
+            this.label5.Text = "NOMBRE";
             // 
             // label3
             // 
